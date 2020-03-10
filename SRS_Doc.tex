@@ -23,6 +23,15 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{xargs}
+\usepackage[pdftex,dvipsnames]{xcolor}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage{etoolbox}
+
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
+
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
     pdftitle={Software Requirement Specification},    % title
@@ -35,13 +44,21 @@
     filecolor=black,        % color of file links
     urlcolor=purple,        % color of external links
     linktoc=page            % only page is linked
-}%
+}
 \def\myversion{1.0 }
 \date{}
 %\title{%
 \setcounter{secnumdepth}{5}
 %}
 \usepackage{hyperref}
+
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=YellowOrange,backgroundcolor=YellowOrange!35,bordercolor=YellowOrange,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+
 \begin{document}
 
 \begin{flushright}
@@ -83,42 +100,71 @@
 \chapter{Introduction}
 
 \section{Purpose}
-$<$ Placeholder $>$
+This document provides detailed requirements about the product our team is creating for the customer.  This document is intended for the customers and the software team designing as a reference on the desired behaviors and requirements of the program.
 
-\section{Scipe}
-$<$ Placeholder $>$
+\section{Scope}
+The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
 
 \section{Definitions, acronyms, and abbreviations}
-$<$ Placeholder $>$
+\textit{WKGS}: Whole Knockoff Grocery Store\\
+\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store\\
 
-\section{References}
+
+\section{References\unsure{Do we need this?}}
 $<$ Placeholder $>$
 
 \section{Overview}
-$<$ Placeholder $>$
+In section 2, the product will be given an overall description.  Section 3 will describe in detail each of the features and their corresponding requirements in detail.   
+%$<$ Placeholder $>$
 
-
-\chapter{Overall Description}
+{\let\clearpage\relax 
+\chapter{Overall Description}}
 
 \section{Product Perspective}
+\info[inline]{This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.A block diagram showing the major components of the larger system, interconnections, and external inter-faces can be helpful.  This  subsection  should  also  describe  how  the  software  operates  inside  various  constraints.  For  example,these constraints could include\bigskip
+	\indent a)System interfaces;\\
+	\indent b)User interfaces;\\
+	\indent c)Hardware interfaces;\\
+	\indent d)Software interfaces;\\
+	\indent e)Communications interfaces;\\
+	\indent f)Memory;\\
+	\indent g)Operations;\\
+	\indent h)Site adaptation requirements.}
 $<$ Placeholder $>$
 
 \section{Product Functions}
+\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
+	a)The  functions  should  be  organized  in  a  way  that  makes  the  list  of  functions  understandable  to  the customer or to anyone else reading the document for the first time.\\\bigskip 
+	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
 $<$ Placeholder $>$
 
 \section{User Classes and Characteristics}
+\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 $<$ Placeholder $>$
 
 \section{Constraints}
+\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
+a)Regulatory policies;\\
+b)Hardware limitations (e.g., signal timing requirements);\\
+c)Interfaces to other applications;\\
+d)Parallel operation;\\
+e)Audit functions;\\
+f)Control functions;\\
+g)Higher-order language requirements;\\
+h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
+i)Reliability requirements;\\
+j)Criticality of the application;\\
+k)Safety and security considerations.\\}
 $<$ Placeholder $>$
 
 \section{Assumptions and Dependencies}
+\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
 $<$ Placeholder $>$
 
 
 
-
-\chapter{Specific requirements}
+{\let\clearpage\relax 
+\chapter{Specific requirements}}
 
 \section{External Interface Requirements}
 
@@ -138,7 +184,9 @@ $<$ Placeholder $>$
 
 %----------------------------
 
+
 \subsection{Online checkout}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 The checkout feature allows users to pay for their item(s) currently in the Cart list to complete their order. Depending on type of users, the feature should preload required user’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the users can specify payment and delivery options on the checkout page. 
 
@@ -154,6 +202,7 @@ When the “Checkout” option is clicked, the system will direct the user to th
 \paragraph[]{\normalfont A user must be logged in as an existing user/member or guest.}
 
 \subsection{Inventory}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 The inventory feature allows different privileges to manage the store items according to the type of users. This feature will create items summary purchased by day, month and year. The feature will notify users of near expiration date items. The user can assign what items to be on-sale. The feature updates item inventory after each completed consumer purchase.
 
@@ -168,8 +217,8 @@ The users can only view the availability of store items on the store website.
 \paragraph[]{\normalfont Privileges will be assigned depending on the user.}
 \paragraph[]{\normalfont Website API for store manager.}
 
-
 \subsection{Shopping list/cart}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 The shopping list/cart feature allows the user to manage their selected item(s). The feature includes information on items’ price, availability, and location in the store. In addition, the user can change the quantity of item(s) to be purchased or remove item(s) from the shopping list/cart.
 
@@ -181,7 +230,9 @@ The users are allowed to save shopping lists to their account.
 
 \paragraph[]{\normalfont Required web page(s) for shopping list/cart.}
 
+
 \subsection{Employee}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 The employee feature allows the management of employees’ time cards and tasks. Manages will be able to assign different tasks such as delivery, gather online orders, etc.  In addition, managers should be able to view and edit employee scheduled work days.  The system should track and display information about employee hours worked and display it to managers.
 
@@ -196,8 +247,8 @@ When users logged in as managers, they are able to check-in/check-out on their t
 \paragraph[]{\normalfont Managers must be able to assign work days to employees.}
 \paragraph[]{\normalfont Employees must be able to view their current assignments.}
 
-
 \subsection{Account Management System}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 This feature allows users to create and edit settings for grocery store accounts.  New users will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing users a convenient way to edit their password, change shipping addresses, manage stored payment information, and change other stored personal details.  From the user management profile, users will also be able to see past purchases and orders.
 
@@ -211,7 +262,9 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 \paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
 \paragraph[]{\normalfont A “dashboard” page must display currently stored customer details.}
 
+
 \subsection{Delivery/Pickup System}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 This feature will allow customers to select where they want to obtain their groceries purchased online.  This system will assign an employee to collect the groceries that the customer purchased as well as a storage location if the groceries are for pickup or a driver if the groceries are for delivery.
 \subsubsection{Stimulus/Response sequence}
@@ -219,20 +272,24 @@ Delivery: If the user selects delivery during checkout, the system will check if
 Pickup: If the user selects pickup, the system will ask the customer what time they wish to pickup the groceries.  After the order is completed, an employee will be assigned to collect the groceries and place the completed order in a designated spot.  When the employee is notified that the customer is ready to pickup the order, the employee will bring the groceries to the customer.
 
 \subsubsection{Associated functional requirements}
-%customer had discussed assigning routes to drivers? Is this necessary?
+
 \paragraph[]{\normalfont A customer must select either delivery or pickup after entering payment information before completing a purchase.}
+
 \paragraph[]{\normalfont The customer must have a delivery address listed if completing a delivery order.}
 \paragraph[]{\normalfont The system must assign an employee to collect the groceries}
 \paragraph[]{\normalfont The system must identify which groceries and quantity to the employee}
+~\\\unsure[inline]{ Customer had discussed assigning routes to drivers? Is this necessary?}
+
 
 \subsection{Storefront System}
+\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description.  From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart.  Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types.  In addition, a search is available for customers to locate a specific item quickly.
 \subsubsection{Stimulus/Response sequence}
 On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
 \subsubsection{Associated functional requirements}
 \paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
-%does this show out of stock items but not allow purchase or hide out of stock items?
+~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
 \paragraph[]{\normalfont The storefront must display items by the currently selected category.}
 \paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
 \paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
