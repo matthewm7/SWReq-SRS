@@ -27,10 +27,122 @@
 \usepackage[pdftex,dvipsnames]{xcolor}
 \usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage{etoolbox}
+\usepackage{hyperref}
+%\usepackage{titlesec}
+\usepackage{amsthm}
+\usepackage{nameref}
+\usepackage{zref-titleref}
+
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{tabularx}
+\useunder{\uline}{\ul}{}
+
+%\usepackage{chngcntr}
+%\usepackage{thmtools}
 
 %\makeatletter
 %\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
 %\makeatother
+
+%\makeatletter
+%\newcommand{\customlabel}[2]{%
+%	\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{}}}}
+%\makeatother
+
+
+%\newcounter{funcreq}
+%\titleclass{\funcreq}{straight}[\part]
+%\titleformat{\funcreq}[hang]
+%{\normalfont\bfseries}{\thefuncreq}{1em}{}
+%\titlespacing*{\funcreq}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
+%\renewcommand{\thefuncreq}{FR\arabic{funcreq}}
+%\counterwithin{section}{funcreq}
+%
+
+%\newtheoremstyle{mytheoremstyle} % name
+%{\topsep}                    % Space above
+%{\topsep}                    % Space below
+%{\itshape}                   % Body font
+%{}                           % Indent amount
+%{\scshape}                   % Theorem head font
+%{}                          % Punctuation after theorem head
+%{0em}                       % Space after theorem head
+%{}  % Theorem head spec (can be left empty, meaning ‘normal’)
+%
+%\theoremstyle{mytheoremstyle}
+
+
+%\newcounter{funcreq}
+%\makeatletter
+%\newenvironment{funcreq}[1]
+%{\refstepcounter{funcreq}%
+%	\protected@edef\@currentlabelname{#1}% addition here
+%	\vspace{0.5cm}\noindent
+%	{\large\bfseries{FR\thefuncreq\par}
+%	}
+%}
+%\makeatother
+
+\usepackage[parfill]{parskip}
+
+\newcounter{funcreq}
+\makeatletter
+\newenvironment{funcreq}
+{\refstepcounter{funcreq}{}%
+	
+	\protected@edef\@currentlabelname
+	everypar={{\setbox0=\lastbox}\thefuncreq.\hspace{4pt}\everypar={}}
+	\noindent
+	{
+	\bfseries{FR\thefuncreq}\par\noindent
+	}
+	\noindent
+}
+{
+\par\noindent
+}
+\makeatother
+
+%\newcommand*{\currentname}{\zref@getcurrent{subsection}}
+\let\Subsectionmark\subsectionmark
+\def\subsectionmark#1{\def\Subsectionname{#1}\Subsectionmark{#1}}
+
+\newtheoremstyle{funreq}
+{0}       % ABOVESPACE
+{0}       % BELOWSPACE
+{\upshape}  % BODYFONT
+{0pt}       % INDENT (empty value is the same as 0pt)
+{}          % HEADFONT
+{}         % HEADPUNCT
+{0pt}         % HEADSPACE
+% CUSTOM-HEAD-SPEC follows
+{\bfseries ID: FR\thmnumber{#2}\\}
+
+\theoremstyle{funreq}
+\newtheorem{funreq}{}
+
+
+\def\sectionautorefname{funcreq}
+\newcommand{\secref}[1]{FR\autoref{#1}}
+
+%{%\par\noindent
+%	
+%	\refstepcounter{funcreq}
+%	\protected@edef\@currentlabelname{#1}
+%	\textbf{FR\thefuncreq}\ignorespaces}
+%{\par\ignorespacesafterend}}
+
+
+%\newcommand*{\fancyreffuncreqprefix}{req}
+
+\newcommand*{\reqref}[1]{\hyperref[#1]{FR\ref*{#1}}}
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabularx}[#1]{@{}X@{}}#2\end{tabularx}}
+
+%\newtheorem{funcreq}{FR}
+
 
 \hypersetup{
     bookmarks=false,    % show bookmarks bar?
@@ -186,6 +298,9 @@ $<$ Placeholder $>$
 
 
 \subsection{Online checkout}
+
+
+	
 \improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 The checkout feature allows users to pay for their item(s) currently in the Cart list to complete their order. Depending on type of users, the feature should preload required user’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the users can specify payment and delivery options on the checkout page. 
@@ -198,6 +313,8 @@ When the “Checkout” option is clicked, the system will direct the user to th
 
 
 \subsubsection{Associated functional requirements}
+
+%\paragraph[]{\normalfont \Subsectionname ~functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 \paragraph[]{\normalfont A checkout page must be available for the users to fill in the required personal information to complete the order.}
 \paragraph[]{\normalfont A user must be logged in as an existing user/member or guest.}
 
@@ -213,9 +330,48 @@ Existing users/members/guests:
 The users can only view the availability of store items on the store website.
 
 \subsubsection{Associated functional requirements}
-\paragraph[]{\normalfont A user must be logged in as an inventory manager.}
-\paragraph[]{\normalfont Privileges will be assigned depending on the user.}
-\paragraph[]{\normalfont Website API for store manager.}
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		
+		\label{inventory_create}
+		TITLE: Create a grocery item\\
+		DESC: An inventory Manager should be able to create a grocery item type, and should add the right classifications that apply to this grocery item. \\
+		RAT: In order for a Manager to register a new grocery item\\
+		DEP: None\\
+	\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	
+	\label{inventory_additems}
+	TITLE: Add grocery items
+	DESC: Given that a grocery item of the type to be added exists in the system, an inventory manager should be able to add grocery items.
+	RAT: In order to increase the number of a particular grocery item available in the store
+	DEP: \reqref{inventory_create}
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	
+	\label{inventory_remove}
+	TITLE: Remove grocery items
+	DESC: An inventory manager should be able to remove grocery items and add a reason for the removal eg. when they are expired
+	RAT: In order to remove grocery items for reasons order than purchase
+	DEP: \reqref{inventory_add}
+\end{funreq}
+
+%\begin{funreq}
+%	
+%	\label{inventory_remove}
+%	TITLE: Remove grocery items
+%	DESC: An inventory manager should be able to remove grocery items and add a reason for the removal eg. when they are expired
+%	RAT: In order to remove grocery items for reasons order than purchase
+%	DEP: \reqref{inventory_add}
+%\end{funcreq}
+
+%\paragraph[]{\normalfont A user must be logged in as an inventory manager.}
+%\paragraph[]{\normalfont Privileges will be assigned depending on the user.}
+%\paragraph[]{\normalfont Website API for store manager.}
 
 \subsection{Shopping list/cart}
 \improvement[inline]{\newline This section is incomplete}
@@ -258,9 +414,69 @@ Existing users: When the “log in” button is pressed, the system will direct 
 Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
 
 \subsubsection{Associated functional requirements}
-\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
-\paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
-\paragraph[]{\normalfont A “dashboard” page must display currently stored customer details.}
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+
+	\label{account_create}
+	TITLE: Create a new User account\\
+	DESC: A user should be able to register through the website. The user must provide user-name, password and e-mail address. \\
+	RAT: In order for a user to register an account\\
+	DEP: None\\
+	
+	\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}
+	\begin{table}[h!]
+		%\begin{adjustbox}{width=\textwidth}
+		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+			\hline
+			Created By    & Emmanuel .W & Date Created    & 03/13/13 \\ \hline
+			Primary Actor & User        & Secondary Actor & Website \\ \hline
+		\end{tabularx}
+		%\end{adjustbox}
+	\end{table}
+	
+	\begin{table}[h!]
+		\resizebox{\textwidth}{!}{%
+			\begin{tabularx}{\columnwidth}{|l|X|}
+				\hline
+				Description: &
+				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
+				Trigger:         & User Clicks on register                    \\ \hline
+				Preconditions    & None                                       \\ \hline
+				Postconditions   & Account is created, User is Logged in      \\ \hline
+				Normal Flow &
+				\bfseries{Create a User new account}\normalfont\newline 
+				User Clicks on Register Enters name, user-name, password and e-mail address.\newline
+				Website confirms it is a unique entry and save the new user details\newline
+				Website Informs User of successful creation\newline
+				Website Logs user in \\ \hline
+				Alternative Flow & None                                       \\ \hline
+				Exceptions       & Email Address already exists in the system \\ \hline
+				Priority         & High                                       \\ \hline
+			\end{tabularx}%
+		}
+	\end{table}
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{account_createstaff}
+	TITLE: Create a new Staff account\\
+	DESC: An administrator should assign staff roles and permissions and an internal company email address\\
+	RAT: In order for a user/staff to register an account\\
+	DEP: None\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{account_login}
+	TITLE: Login into Account\\
+	DESC: Given that a user/staff has created an account, then the user should be able to log in to his/her account.\\
+	RAT: In order to identify a user to shop online and use website/store’s features or for staff to access admin platform\\
+	DEP: \reqref{account_create}
+\end{funreq}
+%\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
+%\paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
+%\paragraph[]{\normalfont A “dashboard” page must display currently stored customer details.}
 
 
 \subsection{Delivery/Pickup System}
@@ -288,11 +504,88 @@ This feature allows customers on the website to see which items the grocery stor
 \subsubsection{Stimulus/Response sequence}
 On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
 \subsubsection{Associated functional requirements}
-\paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
-~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
-\paragraph[]{\normalfont The storefront must display items by the currently selected category.}
-\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
-\paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_home}
+	TITLE: Storefront homepage\\
+	DESC: When the user enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user.\\
+	RAT: So that a customer can navigate the website.\\
+	DEP: None\\
+\end{funreq}
+
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_listcategory}
+	~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
+	TITLE: Display items in inventory\\
+	DESC: When a category is selected, the storefront shall display all items matching the selected category that are in inventory.\\
+	RAT: So that a customer can quickly find items.\\
+	DEP: \reqref{inventory_create}\\
+	
+	ID and Name: FR\thefunreq ~\hspace{.6cm}Display items in inventory
+	\begin{table}[h!]
+		%\begin{adjustbox}{width=\textwidth}
+		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+			\hline
+			Created By    & Matthew M. & Date Created    & 03/14/20 \\ \hline
+			Primary Actor & Storefront        & Secondary Actor & Inventory \\ \hline
+		\end{tabularx}
+		%\end{adjustbox}
+	\end{table}
+
+	\begin{table}[h!]
+		\resizebox{\textwidth}{!}{%
+			\begin{tabularx}{\columnwidth}{|l|X|}
+				\hline
+				Description: &
+				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
+				Trigger:         & User selects category to filter by         \\ \hline
+				Preconditions    & Items have category specified in the inventory             \\ \hline
+				Postconditions   & The storefront displays only items that have the listed category    \\ \hline
+				Normal Flow &
+				The customer selects a store category from the homepage of the website\newline
+				The website updates the list of displayed items with the selected category\\ \hline
+				Alternative Flow & None                                       \\ \hline
+				Exceptions       & No items with the selected category exist \\ \hline
+				Priority         & High                                       \\ \hline
+			\end{tabularx}%
+		}
+	\end{table}
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_search}
+	TITLE: Search for available items\\
+	DESC: When a search term is entered in the searchbox, the storefront shall display all items matching the query.\\
+	RAT: So that a customer can quickly find items.\\
+	DEP: \reqref{inventory_create}\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_details}
+	TITLE: Display item details\\
+	DESC: When the customer clicks on an item on the storefront, the item details are displayed.  The details include a product description and price\\
+	RAT: So that a customer can know what they are buying\\
+	DEP: \reqref{store_listcategory}\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_displaysales}
+	TITLE: Display sale items to customers\\
+	DESC: When a customer logs-in to the website, the homepage shall display sale items for.\\
+	RAT: So that a customer can know what they are buying.\\
+	DEP: \reqref{account_login}\\
+\end{funreq}
+
+%\paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
+%\paragraph[]{\normalfont The storefront must display items by the currently selected category.}
+%\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
+%\paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
 
 \section{Performance requirements}
 $<$ Placeholder $>$
