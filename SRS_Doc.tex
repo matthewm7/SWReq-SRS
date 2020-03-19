@@ -145,6 +145,7 @@
 
 
 \hypersetup{
+<<<<<<< HEAD
 	%bookmarks=false,    % show bookmarks bar?
 	pdftitle={Software Requirement Specification},    % title
 	pdfauthor={Jean-Philippe Eisenbarth},                     % author
@@ -156,6 +157,19 @@
 	filecolor=black,        % color of file links
 	urlcolor=purple,        % color of external links
 	linktoc=page            % only page is linked
+=======
+    %bookmarks=false,    % show bookmarks bar?
+    pdftitle={Software Requirement Specification},    % title
+    pdfauthor={Jean-Philippe Eisenbarth},                     % author
+    pdfsubject={TeX and LaTeX},                        % subject of the document
+    pdfkeywords={TeX, LaTeX, graphics, images}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,       % color of internal links
+    citecolor=black,       % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=purple,        % color of external links
+    linktoc=page            % only page is linked
+>>>>>>> origin/papeeria-merge-conflict-1
 }
 \def\myversion{1.0 }
 \date{}
@@ -172,6 +186,137 @@
 
 
 \begin{document}
+<<<<<<< HEAD
+=======
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.9cm}
+        for\\
+        \vspace{1.9cm}
+        Whole Knockoffs Grocery Store\\
+        %\vspace{1.9cm}
+        %\LARGE{Version \myversion approved}\\
+        %\vspace{1.9cm}
+        %Prepared by $<$author$>$\\
+        %\vspace{1.9cm}
+        %$<$Organization$>$\\
+        \vspace{1.9cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+
+%\chapter*{Revision History}
+%
+%\begin{center}
+%    \begin{tabular}{|c|c|c|c|}
+%        \hline
+%	    Name & Date & Reason For Changes & Version\\
+%        \hline
+%	    21 & 22 & 23 & 24\\
+%        \hline
+%	    31 & 32 & 33 & 34\\
+%        \hline
+%    \end{tabular}
+%\end{center}
+
+\chapter{Introduction}
+
+\section{Purpose}
+This document provides detailed requirements about the product our team is creating for the customer.  This document is intended for the customers and the software team designing as a reference on the desired behaviors and requirements of the program.
+
+\section{Scope}
+The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
+
+\section{Definitions, acronyms, and abbreviations}
+\textit{WKGS}: Whole Knockoff Grocery Store\\
+\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store\\
+
+
+\section{References}\unsure{Do we need this?}
+$<$ Placeholder $>$
+
+\section{Overview}
+In section 2, the product will be given an overall description.  Section 3 will describe in detail each of the features and their corresponding requirements.   
+%$<$ Placeholder $>$
+
+{\let\clearpage\relax 
+\chapter{Overall Description}}
+
+\section{Product Perspective}
+\info[inline]{This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.A block diagram showing the major components of the larger system, interconnections, and external inter-faces can be helpful.  This  subsection  should  also  describe  how  the  software  operates  inside  various  constraints.  For  example,these constraints could include\bigskip
+	\indent a)System interfaces;\\
+	\indent b)User interfaces;\\
+	\indent c)Hardware interfaces;\\
+	\indent d)Software interfaces;\\
+	\indent e)Communications interfaces;\\
+	\indent f)Memory;\\
+	\indent g)Operations;\\
+	\indent h)Site adaptation requirements.}
+$<$ Placeholder $>$
+
+\section{Product Functions}
+\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
+	a)The  functions  should  be  organized  in  a  way  that  makes  the  list  of  functions  understandable  to  the customer or to anyone else reading the document for the first time.\\\bigskip 
+	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
+$<$ Placeholder $>$
+
+\section{User Classes and Characteristics}
+\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
+$<$ Placeholder $>$
+
+\section{Constraints}
+\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
+a)Regulatory policies;\\
+b)Hardware limitations (e.g., signal timing requirements);\\
+c)Interfaces to other applications;\\
+d)Parallel operation;\\
+e)Audit functions;\\
+f)Control functions;\\
+g)Higher-order language requirements;\\
+h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
+i)Reliability requirements;\\
+j)Criticality of the application;\\
+k)Safety and security considerations.\\}
+$<$ Placeholder $>$
+
+\section{Assumptions and Dependencies}
+\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
+$<$ Placeholder $>$
+
+
+
+{\let\clearpage\relax 
+\chapter{Specific requirements}}
+
+\section{External Interface Requirements}
+
+\subsection{User Interfaces}
+$<$ Placeholder $>$
+
+\subsection{Hardware Interfaces}
+$<$ Placeholder $>$
+
+\subsection{Software Interfaces}
+$<$ Placeholder $>$
+
+\subsection{Communications Interfaces}
+$<$ Placeholder $>$
+
+\section{System Features}
+
+%----------------------------
+
+
+\subsection{Online checkout}
+
+
+>>>>>>> origin/papeeria-merge-conflict-1
 	
 	\begin{flushright}
 		\rule{16cm}{5pt}\vskip1cm
