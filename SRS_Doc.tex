@@ -16,6 +16,7 @@
 %http://www.se.rit.edu/~emad/teaching/slides/srs_template_sep14.pdf
 %http://karlwiegers.com
 \documentclass{scrreprt}
+\usepackage{placeins}
 \usepackage{listings}
 \usepackage{underscore}
 %\usepackage[bookmarks=true]{hyperref}
@@ -32,7 +33,7 @@
 \usepackage{amsthm}
 \usepackage{nameref}
 \usepackage{zref-titleref}
-
+\usepackage{float}
 \usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage[normalem]{ulem}
@@ -172,8 +173,6 @@
 
 
 \begin{document}
-<<<<<<< HEAD
-=======
 
 \begin{flushright}
     \rule{16cm}{5pt}\vskip1cm
@@ -300,32 +299,6 @@ $<$ Placeholder $>$
 
 
 \subsection{Online checkout}
-
-
->>>>>>> origin/papeeria-merge-conflict-1
-	
-	\begin{flushright}
-		\rule{16cm}{5pt}\vskip1cm
-		\begin{bfseries}
-			\Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
-			\vspace{1.9cm}
-			for\\
-			\vspace{1.9cm}
-			Whole Knockoffs Grocery Store\\
-			%\vspace{1.9cm}
-			%\LARGE{Version \myversion approved}\\
-			%\vspace{1.9cm}
-			%Prepared by $<$author$>$\\
-			%\vspace{1.9cm}
-			%$<$Organization$>$\\
-			\vspace{1.9cm}
-			\today\\
-		\end{bfseries}
-	\end{flushright}
-	
-	\tableofcontents
-	
-	
 	%\chapter*{Revision History}
 	%
 	%\begin{center}
@@ -339,92 +312,7 @@ $<$ Placeholder $>$
 	%        \hline
 	%    \end{tabular}
 	%\end{center}
-	
-	\chapter{Introduction}
-	
-	\section{Purpose}
-	This document provides detailed requirements about the product our team is creating for the customer.  This document is intended for the customers and the software team designing as a reference on the desired behaviors and requirements of the program.
-	
-	\section{Scope}
-	The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
-	
-	\section{Definitions, acronyms, and abbreviations}
-	\textit{WKGS}: Whole Knockoff Grocery Store\\
-	\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store\\
-	
-	
-	\section{References}\unsure{Do we need this?}
-	$<$ Placeholder $>$
-	
-	\section{Overview}
-	In section 2, the product will be given an overall description.  Section 3 will describe in detail each of the features and their corresponding requirements.   
-	%$<$ Placeholder $>$
-	
-	{\let\clearpage\relax 
-		\chapter{Overall Description}}
-	
-	\section{Product Perspective}
-	\info[inline]{This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.A block diagram showing the major components of the larger system, interconnections, and external inter-faces can be helpful.  This  subsection  should  also  describe  how  the  software  operates  inside  various  constraints.  For  example,these constraints could include\bigskip
-		\indent a)System interfaces;\\
-		\indent b)User interfaces;\\
-		\indent c)Hardware interfaces;\\
-		\indent d)Software interfaces;\\
-		\indent e)Communications interfaces;\\
-		\indent f)Memory;\\
-		\indent g)Operations;\\
-		\indent h)Site adaptation requirements.}
-	$<$ Placeholder $>$
-	
-	\section{Product Functions}
-	\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
-		a)The  functions  should  be  organized  in  a  way  that  makes  the  list  of  functions  understandable  to  the customer or to anyone else reading the document for the first time.\\\bigskip 
-		b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
-	$<$ Placeholder $>$
-	
-	\section{User Classes and Characteristics}
-	\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
-	$<$ Placeholder $>$
-	
-	\section{Constraints}
-	\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
-		a)Regulatory policies;\\
-		b)Hardware limitations (e.g., signal timing requirements);\\
-		c)Interfaces to other applications;\\
-		d)Parallel operation;\\
-		e)Audit functions;\\
-		f)Control functions;\\
-		g)Higher-order language requirements;\\
-		h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
-		i)Reliability requirements;\\
-		j)Criticality of the application;\\
-		k)Safety and security considerations.\\}
-	$<$ Placeholder $>$
-	
-	\section{Assumptions and Dependencies}
-	\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
-	$<$ Placeholder $>$
-	
-	
-	
-	{\let\clearpage\relax 
-		\chapter{Specific requirements}}
-	
-	\section{External Interface Requirements}
-	
-	\subsection{User Interfaces}
-	$<$ Placeholder $>$
-	
-	\subsection{Hardware Interfaces}
-	$<$ Placeholder $>$
-	
-	\subsection{Software Interfaces}
-	$<$ Placeholder $>$
-	
-	\subsection{Communications Interfaces}
-	$<$ Placeholder $>$
-	
-	\section{System Features}
-	
+
 	%----------------------------
 	
 	
@@ -457,8 +345,9 @@ $<$ Placeholder $>$
 		RAT: In order for all users to pay for their online order.\\
 		DEP: None\\
 		
-		\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}
-		\begin{table}[h!]
+		\clearpage
+		\begin{table}[htb]
+			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}\end{flushleft}
 			%\begin{adjustbox}{width=\textwidth}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
@@ -505,8 +394,8 @@ $<$ Placeholder $>$
 				\end{tabularx}%
 			}
 		\end{table}
-		
-		\begin{table}[h!]
+		\clearpage
+		\begin{table}[htb!]
 			%\begin{adjustbox}{width=\textwidth}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
@@ -555,9 +444,83 @@ $<$ Placeholder $>$
 			}
 		\end{table}
 	\end{funreq}
+
+	\subsection{Account Management System}
+\improvement[inline]{\newline This section is incomplete}
+\subsubsection{Introduction/Purpose of feature}
+This feature allows users to create and edit settings for grocery store accounts.  New users will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing users a convenient way to edit their password, change shipping addresses, manage stored payment information, and change other stored personal details.  From the user management profile, users will also be able to see past purchases and orders.
+
+\subsubsection{Stimulus/Response sequence}
+\indent New users: When the “sign up” button is pressed, the system will direct the user to select a username and password to create their account.  After the user fills appropriate values into these fields, the user will be able to sign in using the credentials selected.
+Existing users: When the “log in” button is pressed, the system will direct the user to enter their credentials to sign into the system.  
+Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
+
+\subsubsection{Associated functional requirements}
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+
+\begin{funreq}
 	
+	\label{account_create}
+	TITLE: Create a new User account\\
+	DESC: A user should be able to register through the website. The user must provide user-name, password and e-mail address. \\
+	RAT: In order for a user to register an account\\
+	DEP: None\\
 	
-	
+	\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}
+	\begin{table}[h!]
+		%\begin{adjustbox}{width=\textwidth}
+		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+			\hline
+			Created By    & Emmanuel .W & Date Created    & 03/13/13 \\ \hline
+			Primary Actor & User        & Secondary Actor & Website \\ \hline
+		\end{tabularx}
+		%\end{adjustbox}
+		%\end{table}
+		
+		%\begin{table}[h!]
+		\resizebox{\textwidth}{!}{%
+			\begin{tabularx}{\columnwidth}{|l|X|}
+				\hline
+				Description: &
+				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
+				Trigger:         & User Clicks on register                    \\ \hline
+				Preconditions    & None                                       \\ \hline
+				Postconditions   & Account is created, User is Logged in      \\ \hline
+				Normal Flow &
+				\bfseries{Create a User new account}\normalfont\newline 
+				User Clicks on Register Enters name, user-name, password and e-mail address.\newline
+				Website confirms it is a unique entry and save the new user details\newline
+				Website Informs User of successful creation\newline
+				Website Logs user in \\ \hline
+				Alternative Flow & None                                       \\ \hline
+				Exceptions       & Email Address already exists in the system \\ \hline
+				Priority         & High                                       \\ \hline
+			\end{tabularx}%
+		}
+	\end{table}
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{account_createstaff}
+	TITLE: Create a new Staff account\\
+	DESC: An administrator should assign staff roles and permissions and an internal company email address\\
+	RAT: In order for a user/staff to register an account\\
+	DEP: None\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{account_login}
+	TITLE: Login into Account\\
+	DESC: Given that a user/staff has created an account, then the user should be able to log in to his/her account.\\
+	RAT: In order to identify a user to shop online and use website/store’s features or for staff to access admin platform\\
+	DEP: \reqref{account_create}
+\end{funreq}
+%\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
+%\paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
+%\paragraph[]{\normalfont A “dashboard” page must display currently stored customer details.}
+
 	\subsection{Inventory}
 	\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
@@ -613,6 +576,105 @@ $<$ Placeholder $>$
 	%\paragraph[]{\normalfont Privileges will be assigned depending on the user.}
 	%\paragraph[]{\normalfont Website API for store manager.}
 	
+
+
+
+
+
+
+
+
+	\subsection{Storefront System}
+\improvement[inline]{\newline This section is incomplete}
+\subsubsection{Introduction/Purpose of feature}
+This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description.  From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart.  Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types.  In addition, a search is available for customers to locate a specific item quickly.
+\subsubsection{Stimulus/Response sequence}
+On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
+\subsubsection{Associated functional requirements}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_home}
+	TITLE: Storefront homepage\\
+	DESC: When the user enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user.\\
+	RAT: So that a customer can navigate the website.\\
+	DEP: None\\
+\end{funreq}
+
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_listcategory}
+	~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
+	TITLE: Display items in inventory\\
+	DESC: When a category is selected, the storefront shall display all items matching the selected category that are in inventory.\\
+	RAT: So that a customer can quickly find items.\\
+	DEP: \reqref{inventory_create}\\
+	
+
+	\begin{table}[htb!]
+		\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Display items in inventory}\normalfont\end{flushleft}
+		%\begin{adjustbox}{width=\textwidth}
+		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+			\hline
+			Created By    & Matthew M. & Date Created    & 03/14/20 \\ \hline
+			Primary Actor & Storefront        & Secondary Actor & Inventory \\ \hline
+		\end{tabularx}
+		%\end{adjustbox}
+		%\end{table}
+		
+		%\begin{table}[h!]
+		\resizebox{\textwidth}{!}{%
+			\begin{tabularx}{\columnwidth}{|l|X|}
+				\hline
+				Description: &
+				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
+				Trigger:         & User selects category to filter by         \\ \hline
+				Preconditions    & Items have category specified in the inventory             \\ \hline
+				Postconditions   & The storefront displays only items that have the listed category    \\ \hline
+				Normal Flow &
+				The customer selects a store category from the homepage of the website\newline
+				The website updates the list of displayed items with the selected category\\ \hline
+				Alternative Flow & None                                       \\ \hline
+				Exceptions       & No items with the selected category exist \\ \hline
+				Priority         & High                                       \\ \hline
+			\end{tabularx}%
+		}
+	\end{table}
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_search}
+	TITLE: Search for available items\\
+	DESC: When a search term is entered in the searchbox, the storefront shall display all items matching the query.\\
+	RAT: So that a customer can quickly find items.\\
+	DEP: \reqref{inventory_create}\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_details}
+	TITLE: Display item details\\
+	DESC: When the customer clicks on an item on the storefront, the item details are displayed.  The details include a product description and price\\
+	RAT: So that a customer can know what they are buying\\
+	DEP: \reqref{store_listcategory}\\
+\end{funreq}
+
+\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\begin{funreq}
+	\label{store_displaysales}
+	TITLE: Display sale items to customers\\
+	DESC: When a customer logs-in to the website, the homepage shall display sale items for.\\
+	RAT: So that a customer can know what they are buying.\\
+	DEP: \reqref{account_login}\\
+\end{funreq}
+
+%\paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
+%\paragraph[]{\normalfont The storefront must display items by the currently selected category.}
+%\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
+%\paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
+
 	\subsection{Shopping list/cart}
 	\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
@@ -637,8 +699,10 @@ $<$ Placeholder $>$
 		RAT: In order for a user to add items to their shopping cart from the catalog of items\\
 		DEP: Must be a member\\
 		
-		\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create your shopping cart}
-		\begin{table}[h!]
+
+	\clearpage
+		\begin{table}[!htb]
+		\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create your shopping cart}\end{flushleft}
 			%\begin{adjustbox}{width=\textwidth}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
@@ -674,10 +738,11 @@ $<$ Placeholder $>$
 			}
 		\end{table}
 	\end{funreq}
+
 	
 	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 	\begin{funreq}
-		\label{account_login}
+		\label{card_buy}
 		TITLE: Buy items from the shopping cart\\
 		DESC: Proceed to checkout from the shopping cart and buy all items in the shopping cart or a portion of the items in the shopping cart\\
 		RAT: Allow user to buy items that have been placed in the shopping cart\\
@@ -701,83 +766,6 @@ $<$ Placeholder $>$
 	\paragraph[]{\normalfont Managers must be able to assign work days to employees.}
 	\paragraph[]{\normalfont Employees must be able to view their current assignments.}
 	
-	\subsection{Account Management System}
-	\improvement[inline]{\newline This section is incomplete}
-	\subsubsection{Introduction/Purpose of feature}
-	This feature allows users to create and edit settings for grocery store accounts.  New users will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing users a convenient way to edit their password, change shipping addresses, manage stored payment information, and change other stored personal details.  From the user management profile, users will also be able to see past purchases and orders.
-	
-	\subsubsection{Stimulus/Response sequence}
-	\indent New users: When the “sign up” button is pressed, the system will direct the user to select a username and password to create their account.  After the user fills appropriate values into these fields, the user will be able to sign in using the credentials selected.
-	Existing users: When the “log in” button is pressed, the system will direct the user to enter their credentials to sign into the system.  
-	Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
-	
-	\subsubsection{Associated functional requirements}
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	
-	\begin{funreq}
-		
-		\label{account_create}
-		TITLE: Create a new User account\\
-		DESC: A user should be able to register through the website. The user must provide user-name, password and e-mail address. \\
-		RAT: In order for a user to register an account\\
-		DEP: None\\
-		
-		\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}
-		\begin{table}[h!]
-			%\begin{adjustbox}{width=\textwidth}
-			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
-				\hline
-				Created By    & Emmanuel .W & Date Created    & 03/13/13 \\ \hline
-				Primary Actor & User        & Secondary Actor & Website \\ \hline
-			\end{tabularx}
-			%\end{adjustbox}
-		%\end{table}
-		
-		%\begin{table}[h!]
-			\resizebox{\textwidth}{!}{%
-				\begin{tabularx}{\columnwidth}{|l|X|}
-					\hline
-					Description: &
-					A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
-					Trigger:         & User Clicks on register                    \\ \hline
-					Preconditions    & None                                       \\ \hline
-					Postconditions   & Account is created, User is Logged in      \\ \hline
-					Normal Flow &
-					\bfseries{Create a User new account}\normalfont\newline 
-					User Clicks on Register Enters name, user-name, password and e-mail address.\newline
-					Website confirms it is a unique entry and save the new user details\newline
-					Website Informs User of successful creation\newline
-					Website Logs user in \\ \hline
-					Alternative Flow & None                                       \\ \hline
-					Exceptions       & Email Address already exists in the system \\ \hline
-					Priority         & High                                       \\ \hline
-				\end{tabularx}%
-			}
-		\end{table}
-	\end{funreq}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{account_createstaff}
-		TITLE: Create a new Staff account\\
-		DESC: An administrator should assign staff roles and permissions and an internal company email address\\
-		RAT: In order for a user/staff to register an account\\
-		DEP: None\\
-	\end{funreq}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{account_login}
-		TITLE: Login into Account\\
-		DESC: Given that a user/staff has created an account, then the user should be able to log in to his/her account.\\
-		RAT: In order to identify a user to shop online and use website/store’s features or for staff to access admin platform\\
-		DEP: \reqref{account_create}
-	\end{funreq}
-	%\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
-	%\paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
-	%\paragraph[]{\normalfont A “dashboard” page must display currently stored customer details.}
-	
-	
 	\subsection{Delivery/Pickup System}
 	\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
@@ -795,96 +783,6 @@ $<$ Placeholder $>$
 	\paragraph[]{\normalfont The system must identify which groceries and quantity to the employee}
 	~\\\unsure[inline]{ Customer had discussed assigning routes to drivers? Is this necessary?}
 	
-	
-	\subsection{Storefront System}
-	\improvement[inline]{\newline This section is incomplete}
-	\subsubsection{Introduction/Purpose of feature}
-	This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description.  From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart.  Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types.  In addition, a search is available for customers to locate a specific item quickly.
-	\subsubsection{Stimulus/Response sequence}
-	On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
-	\subsubsection{Associated functional requirements}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{store_home}
-		TITLE: Storefront homepage\\
-		DESC: When the user enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user.\\
-		RAT: So that a customer can navigate the website.\\
-		DEP: None\\
-	\end{funreq}
-	
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{store_listcategory}
-		~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
-		TITLE: Display items in inventory\\
-		DESC: When a category is selected, the storefront shall display all items matching the selected category that are in inventory.\\
-		RAT: So that a customer can quickly find items.\\
-		DEP: \reqref{inventory_create}\\
-		
-		\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Display items in inventory}\normalfont
-		\begin{table}[h!]
-			%\begin{adjustbox}{width=\textwidth}
-			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
-				\hline
-				Created By    & Matthew M. & Date Created    & 03/14/20 \\ \hline
-				Primary Actor & Storefront        & Secondary Actor & Inventory \\ \hline
-			\end{tabularx}
-			%\end{adjustbox}
-		%\end{table}
-		
-		%\begin{table}[h!]
-			\resizebox{\textwidth}{!}{%
-				\begin{tabularx}{\columnwidth}{|l|X|}
-					\hline
-					Description: &
-					A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
-					Trigger:         & User selects category to filter by         \\ \hline
-					Preconditions    & Items have category specified in the inventory             \\ \hline
-					Postconditions   & The storefront displays only items that have the listed category    \\ \hline
-					Normal Flow &
-					The customer selects a store category from the homepage of the website\newline
-					The website updates the list of displayed items with the selected category\\ \hline
-					Alternative Flow & None                                       \\ \hline
-					Exceptions       & No items with the selected category exist \\ \hline
-					Priority         & High                                       \\ \hline
-				\end{tabularx}%
-			}
-		\end{table}
-	\end{funreq}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{store_search}
-		TITLE: Search for available items\\
-		DESC: When a search term is entered in the searchbox, the storefront shall display all items matching the query.\\
-		RAT: So that a customer can quickly find items.\\
-		DEP: \reqref{inventory_create}\\
-	\end{funreq}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{store_details}
-		TITLE: Display item details\\
-		DESC: When the customer clicks on an item on the storefront, the item details are displayed.  The details include a product description and price\\
-		RAT: So that a customer can know what they are buying\\
-		DEP: \reqref{store_listcategory}\\
-	\end{funreq}
-	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\begin{funreq}
-		\label{store_displaysales}
-		TITLE: Display sale items to customers\\
-		DESC: When a customer logs-in to the website, the homepage shall display sale items for.\\
-		RAT: So that a customer can know what they are buying.\\
-		DEP: \reqref{account_login}\\
-	\end{funreq}
-	
-	%\paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
-	%\paragraph[]{\normalfont The storefront must display items by the currently selected category.}
-	%\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
-	%\paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
 	
 	\section{Performance requirements}
 	$<$ Placeholder $>$
