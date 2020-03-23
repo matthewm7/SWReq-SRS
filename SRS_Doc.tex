@@ -524,13 +524,12 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	\subsection{Inventory}
 	\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The inventory feature allows different privileges to manage the store items according to the type of users. This feature will create items summary purchased by day, month and year. The feature will notify users of near expiration date items. The user can assign what items to be on-sale. The feature updates item inventory after each completed consumer purchase.
+	The inventory stores information about the type, quantity, price and price of all the items that the grocery store stocks. The inventory feature allows different privileges to manage the store items according to the type of users. This feature will create items summary purchased by day, month and year. The user can assign what items to be on-sale. The feature updates item inventory after each completed consumer purchase.
 	
 	\subsubsection{Stimulus/Response sequence}
-	Inventory manager:
-	Following options are available to an inventory manager user: add/remove/update items from store inventory, assign items to be on-sale, assign about to expired item to be removed, can sort the items by date of purchased.
-	Existing users/members/guests:
-	The users can only view the availability of store items on the store website.
+	Inventory manager: Following options are available to an inventory manager \\
+	User: add/remove/update items from store inventory, assign items to be on-sale, can sort the items by date of purchased.\\
+	Existing users/members/guests:  The users can only view the availability of store items on the store website.\\
 	
 	\subsubsection{Associated functional requirements}
 	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -543,13 +542,31 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 		DEP: None\\
 	\end{funreq}
 	
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\begin{funreq}
+	%	
+	%	\label{inventory_additems}
+	%	TITLE: Add grocery items
+	%	DESC: Given that a grocery item of the type to be added exists in the system, an inventory manager should be able to add grocery items.
+	%	RAT: In order to add a new item available in the store
+	%	DEP: \reqref{inventory_create}
+	%\end{funreq}
+	
 	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 	\begin{funreq}
-		
-		\label{inventory_additems}
-		TITLE: Add grocery items
-		DESC: Given that a grocery item of the type to be added exists in the system, an inventory manager should be able to add grocery items.
-		RAT: In order to increase the number of a particular grocery item available in the store
+		\label{inventory_increasenumber}
+		TITLE: Add quantity of grocery item
+		DESC: The quantity of an item in the database should be able to be increased.  This allows the store to replenish their inventory when new shipments arrive.
+		RAT: In order to maintain a correct inventory
+		DEP: \reqref{inventory_create}
+	\end{funreq}
+
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{inventory_decreasenumber}
+		TITLE: Decrease quantity of grocery item
+		DESC: The quantity of an item in the database should be able to be decreased.  This allows the store to subtract from their inventory when they sell an item.
+		RAT: In order to maintain a correct inventory
 		DEP: \reqref{inventory_create}
 	\end{funreq}
 	
@@ -558,11 +575,14 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 		
 		\label{inventory_remove}
 		TITLE: Remove grocery items
-		DESC: An inventory manager should be able to remove grocery items and add a reason for the removal eg. when they are expired
+		DESC: An inventory manager should be able to remove grocery items and add a reason for the removal eg. when they are expired.
 		RAT: In order to remove grocery items for reasons order than purchase
-		DEP: \reqref{inventory_additems}
+		DEP: \reqref{inventory_increasenumber}
 	\end{funreq}
-	
+
+
+
+
 	%\begin{funreq}
 	%	
 	%	\label{inventory_remove}
@@ -753,7 +773,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsection{Employee}
 	\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The employee feature allows the management of employees’ time cards and tasks. Manages will be able to assign different tasks such as delivery, gather online orders, etc.  In addition, managers should be able to view and edit employee scheduled work days.  The system should track and display information about employee hours worked and display it to managers.
+	The employee feature allows the management of employees’ time cards and tasks. Managers will be able to assign different tasks such as delivery, gather online orders, etc.  In addition, managers should be able to view and edit employee scheduled work days.  The system should track and display information about employee hours worked and display it to managers.
 	
 	
 	\subsubsection{Stimulus/Response sequence}
@@ -763,8 +783,62 @@ On the Storefront homepage/category page: Listing of items available should be d
 	When users logged in as managers, they are able to check-in/check-out on their time card. They will see the tasks assigned for them to be completed.
 	
 	\subsubsection{Associated functional requirements}
-	\paragraph[]{\normalfont Managers must be able to assign work days to employees.}
-	\paragraph[]{\normalfont Employees must be able to view their current assignments.}
+	%\paragraph[]{\normalfont Managers must be able to assign work days to employees.}
+	%\paragraph[]{\normalfont Employees must be able to view their current assignments.}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_login}
+		TITLE: Employee login\\
+		DESC: All employees shall be able to log-in to the employee page.\\
+		RAT: So that employees view their schedules\\
+		DEP: none
+	\end{funreq}
+	
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_addremove}
+		TITLE: Add or remove employees\\
+		DESC: Managers and admins shall be able to add or remove employees from the company.  \\
+		RAT: So that employees can know their position in the company\\
+		DEP: none
+	\end{funreq}
+	
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_role}
+		TITLE: Employee role\\
+		DESC: Employees must have a role such as manager, owner, cashier, etc...  The employee role will dictate what features of the website to which the employee will have access.\\
+		RAT: So that managers can manage the company\\
+		DEP: \reqref{employee_addremove}
+	\end{funreq}
+
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_assign}
+		TITLE: Manager assign work days\\
+		DESC: Managers must be able to assign work days to employees.  The manager must be able to set which hours for every day of the week that that employee must work.\\
+		RAT: So that employees can know which days to work\\
+		DEP: \reqref{employee_role}
+	\end{funreq}
+	
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_viewwork}
+		TITLE: Employee view assignments\\
+		DESC: Employees must have a page where they can view their assigned schedule for the week.  The schedule will show which days they will work and what hours they must work.\\
+		RAT: So that employees can know which days to work\\
+		DEP: \reqref{employee_assign}
+	\end{funreq}
+	
+	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\begin{funreq}
+		\label{employee_clock}
+		TITLE: Employee clock-in/clock-out\\
+		DESC: Employees must have a page where they clock in or out for their work day.  If an employee is not currently clocked in, they will be presented with an option to clock in.  If an employee is clocked in, they must be presented with an option to clock out.\\
+		RAT: So that managers can know how long an employee worked\\
+		DEP: \reqref{employee_addremove}
+	\end{funreq}
 	
 	\subsection{Delivery/Pickup System}
 	\improvement[inline]{\newline This section is incomplete}
