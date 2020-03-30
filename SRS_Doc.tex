@@ -40,6 +40,10 @@
 \usepackage{tabularx}
 \useunder{\uline}{\ul}{}
 \usepackage[parfill]{parskip}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+
+
 %\usepackage[all]{nowidow}
 
 \newcounter{funcreq}
@@ -235,7 +239,49 @@ $<$ Placeholder $>$
 \section{External Interface Requirements}
 
 \subsection{User Interfaces}
-$<$ Placeholder $>$
+
+When a customer first visits the Whole Knockoffs grocery store website, the user will initially see a page similar to Figure \ref{homepage}.  This page will show the customer deals that the store wants to promote.  When the customer clicks on an item box, an item details page similar to the one in Figure \ref{item_page} should be shown. From this page, the user can view details about the item, view images of the item, and add the desired quantity to the shopping cart.
+\begin{figure}[H]
+	\mbox{
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram1.png}
+			\caption{Homepage}
+			\label{homepage}
+		\end{minipage}
+	
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram2.png}
+			\caption{Item Page}
+			\label{item_page}
+		\end{minipage}
+	}
+\end{figure}
+
+When the customer clicks on the cart icon, the user can then view a list, the quantity, and the total price for the items that the user selected.  Using an interface similar to Figure \ref{cart}, the user can change the quantity and review their order.  If the user is not logged in to the system, they will be prompted to login to the page shown in Figure \ref{login}.  
+\begin{figure}[H]
+	\mbox{
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram4.png}
+			\caption{Customer Cart}
+			\label{cart}
+		\end{minipage}
+		
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram3.png}
+			\caption{Login Page}
+			\label{login}
+		\end{minipage}
+	}
+\end{figure}
+When the user is logged in, the user will then be presented with the payment screen.  If the user does not have any stored page information or the user is a guest, they will be presented with a user interface similar to Figure \ref{payment}.  
+
+\begin{figure}[H]
+	\includegraphics[width=6 in]{UserDiagram5.png}
+	\caption{Payment Info}
+	\label{payment}
+\end{figure}
+
+$<$Placeholder for more user interface$>$
 
 \subsection{Hardware Interfaces}
 $<$ Placeholder $>$
@@ -858,7 +904,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 				Primary Actor & Guest/Member user & Secondary Actor & Website 
 				\\ \hline
 			\end{tabularx}
-			\resizebox{\textwidth}{!}{%
+			\resizebox{\textwidth}{!}{
 				\begin{tabularx}{\columnwidth}{|l|X|}
 					\hline Description: &
 				    The website shall check for user’s choice of delivery or in-store pickup for payment processed online order and validate for delivery address.
@@ -1056,8 +1102,15 @@ On the Storefront homepage/category page: Listing of items available should be d
 	%\paragraph[]{\normalfont The system must identify which groceries and quantity to the employee}
 	%~\\\unsure[inline]{ Customer had discussed assigning routes to drivers? Is this necessary?}
 	
+	\section{Non-functional requirements}
+	\subsection{Login Security}
+	System shall transmit user credentials in an encrypted form.  This will prevent attackers from easily viewing the customer's credentials as they are transmitted.  
+	
+	$<$ Placeholder $>$
 	
 	\section{Performance requirements}
+	\subsection{Inventory query response time}
+	When a query is made of the inventory database, the system should not take more than 500 milliseconds to respond.  This is to ensure that requests are handled quickly and the system does not become backlogged with requests.
 	$<$ Placeholder $>$
 	
 	\section{Design constraints}
@@ -1067,9 +1120,6 @@ On the Storefront homepage/category page: Listing of items available should be d
 	%$<$ Placeholder $>$
 	
 	\section{Software quality attributes}
-	$<$ Placeholder $>$
-	
-	\section{Other requirements}
 	$<$ Placeholder $>$
 	
 	%\section{Business Rules}
