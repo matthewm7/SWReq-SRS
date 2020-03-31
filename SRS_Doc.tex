@@ -210,7 +210,7 @@ $<$ \begin{itemize}
 \section{User Classes and Characteristics}
 \info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 
-$<$ There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. $>$
+$<$ There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Shoppers will be given the choice to involve themselves in almost any stage of the shopping experience or remain absent throughout the entire process. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the webpage. $>$
 
 \section{Constraints}
 \info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
@@ -225,11 +225,11 @@ h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
 i)Reliability requirements;\\
 j)Criticality of the application;\\
 k)Safety and security considerations.\\}
-$<$ Placeholder $>$
+$<$ There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the webpage during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. $>$
 
 \section{Assumptions and Dependencies}
 \info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
-$<$ Placeholder $>$
+$<$ Several future dependencies could change the requirements for the \textit{Whole Knockoffs} grocery store purchasing/employee site. Integration with other shopping applications could alter the amount of information displayed by the site and how the site handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{Whole Knockoffs} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. $>$
 
 
 
@@ -284,13 +284,13 @@ When the user is logged in, the user will then be presented with the payment scr
 $<$Placeholder for more user interface$>$
 
 \subsection{Hardware Interfaces}
-$<$ Placeholder $>$
+The website application will be online and is accessible via web portal, no hardware needed. 
 
 \subsection{Software Interfaces}
-$<$ Placeholder $>$
+The website application will communicate with a GPS application for delivery locations.
 
 \subsection{Communications Interfaces}
-$<$ Placeholder $>$
+The website application must have accessed communication to a separate inventory system from the Whole Knockoffs Grocery for inventory data; up to date inventory data is dependent on the store's inventory system. 
 
 \section{System Features}
 
@@ -1106,12 +1106,21 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsection{Login Security}
 	System shall transmit user credentials in an encrypted form.  This will prevent attackers from easily viewing the customer's credentials as they are transmitted.  
 	
-	$<$ Placeholder $>$
-	
-	\section{Performance requirements}
+    \subsection{Mobile Useability}
+	The website shall be mobile friendly.
+
+    \subsection{Website Useability}
+    The website’s storefront shall be user friendly (easy to use) to promote consumer’s usabilities.
+
+    \subsection{Payment Security}
+    The website shall protect consumer’s personal data, which shall provide the consumer peace of mind and trust when using the website.
+
+	\section{Performance Requirements}
 	\subsection{Inventory query response time}
 	When a query is made of the inventory database, the system should not take more than 500 milliseconds to respond.  This is to ensure that requests are handled quickly and the system does not become backlogged with requests.
-	$<$ Placeholder $>$
+	
+	\subsection{Storepage Load Time}
+	The website storefront shall load swiftly; the website should not take longer than 5 seconds to load. The average loading speed for each page should be 3 seconds with high speed internet connection.
 	
 	\section{Design constraints}
 	$<$ Placeholder $>$
@@ -1172,8 +1181,6 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\item[$\circ$]So that I can sell more groceries
 		\end{itemize}
 	\end{itemize}
-	
-	test
 	
 	\begin{itemize}
 		\item Feature: In-store pickup
