@@ -187,50 +187,55 @@ Shoppers are will be met with an easy, convenient, user friendly item selection 
 
 
 \section{Product Perspective}
-\info[inline]{This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.A block diagram showing the major components of the larger system, interconnections, and external inter-faces can be helpful.  This  subsection  should  also  describe  how  the  software  operates  inside  various  constraints.  For  example,these constraints could include\bigskip
-	\indent a)System interfaces;\\
-	\indent b)User interfaces;\\
-	\indent c)Hardware interfaces;\\
-	\indent d)Software interfaces;\\
-	\indent e)Communications interfaces;\\
-	\indent f)Memory;\\
-	\indent g)Operations;\\
-	\indent h)Site adaptation requirements.}
-$<$ The system is not expected to interface with any other systems outside the store webpage. The employee interface and customer facing portion of the webpage will be seperate but interface together on the same application. Although the webpage is standalone and will not or is not currently expected to be able to manage the needs of multiple stores but may be a necessary requirement for the future of the Whole Knockoffs brand expansion. $>$
+%\info[inline]{This subsection of the SRS should put the product into perspective with other related products. If the product is independent and totally self-contained, it should be so stated here. If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software.A block diagram showing the major components of the larger system, interconnections, and external inter-faces can be helpful.  This  subsection  should  also  describe  how  the  software  operates  inside  various  constraints.  For  example,these constraints could include\bigskip
+%	\indent a)System interfaces;\\
+%	\indent b)User interfaces;\\
+%	\indent c)Hardware interfaces;\\
+%	\indent d)Software interfaces;\\
+%	\indent e)Communications interfaces;\\
+%	\indent f)Memory;\\
+%	\indent g)Operations;\\
+%	\indent h)Site adaptation requirements.}
+%$<$ 
+The system is not expected to interface with any other systems outside the store webpage. The employee interface and customer facing portion of the webpage will be seperate but interface together on the same application. Although the webpage is standalone and will not or is not currently expected to be able to manage the needs of multiple stores but may be a necessary requirement for the future of the Whole Knockoffs brand expansion. %$>$
 
 \section{Product Functions}
-\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
-	a)The  functions  should  be  organized  in  a  way  that  makes  the  list  of  functions  understandable  to  the customer or to anyone else reading the document for the first time.\\\bigskip 
-	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
-$<$ \begin{itemize}
+%\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
+%	a)The  functions  should  be  organized  in  a  way  that  makes  the  list  of  functions  understandable  to  the customer or to anyone else reading the document for the first time.\\\bigskip 
+%	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
+%$<$ 
+\begin{itemize}
     \item Shopping list creation - the shopping list creation tools will allow customers to build/fill their shopping carts with all of the items the desire to purchase and store the information for later purchase through the webpage or to take the shopping cart/list with them as they browse the store.
     \item Online checkout - through the webpage will offer the ability to customers to purchase all or some of the items in their cart in addition to selecting the type of delivery/pickup they desire.
     \item Delivery/pickup of items - functions to alert employees of the desire of the customer as to which preferred delivery method suites their lifestyle most comfortably, alerting employees to the method by which they are to aid the customer in obtaining their goods.
-\end{itemize} $>$
+\end{itemize}% $>$
 
 \section{User Classes and Characteristics}
-\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
+%\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 
-$<$ There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Shoppers will be given the choice to involve themselves in almost any stage of the shopping experience or remain absent throughout the entire process. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the webpage. $>$
+%$<$ 
+There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Shoppers will be given the choice to involve themselves in almost any stage of the shopping experience or remain absent throughout the entire process. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the webpage. %$>$
 
 \section{Constraints}
-\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
-a)Regulatory policies;\\
-b)Hardware limitations (e.g., signal timing requirements);\\
-c)Interfaces to other applications;\\
-d)Parallel operation;\\
-e)Audit functions;\\
-f)Control functions;\\
-g)Higher-order language requirements;\\
-h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
-i)Reliability requirements;\\
-j)Criticality of the application;\\
-k)Safety and security considerations.\\}
-$<$ There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the webpage during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. $>$
+%\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
+%a)Regulatory policies;\\
+%b)Hardware limitations (e.g., signal timing requirements);\\
+%c)Interfaces to other applications;\\
+%d)Parallel operation;\\
+%e)Audit functions;\\
+%f)Control functions;\\
+%g)Higher-order language requirements;\\
+%h)Signal handshake protocols (e.g., XON-XOFF, ACK-NACK);\\
+%i)Reliability requirements;\\
+%j)Criticality of the application;\\
+%k)Safety and security considerations.\\}
+%$<$ 
+There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the webpage during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. %$>$
 
 \section{Assumptions and Dependencies}
-\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
-$<$ Several future dependencies could change the requirements for the \textit{Whole Knockoffs} grocery store purchasing/employee site. Integration with other shopping applications could alter the amount of information displayed by the site and how the site handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{Whole Knockoffs} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. $>$
+%\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
+%$<$ 
+Several future dependencies could change the requirements for the \textit{Whole Knockoffs} grocery store purchasing/employee site. Integration with other shopping applications could alter the amount of information displayed by the site and how the site handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{Whole Knockoffs} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. %$>$
 
 
 
