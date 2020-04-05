@@ -54,19 +54,26 @@
 	everypar={{\setbox0=\lastbox}\thefuncreq.\hspace{4pt}\everypar={}}
 	\noindent
 	{
-		\bfseries{FR\thefuncreq}\par\noindent
+		\bfseries{FR\thefuncreq} \par\noindent
 	}
 	\noindent
 }
 {
 	\par\noindent
+	
 
 }
 \makeatother
 
 %\newcommand*{\currentname}{\zref@getcurrent{subsection}}
+\let\Chaptermark\chaptermark
+\def\chaptermark#1{\def\Chaptername{#1}\Chaptermark{#1}}
+\let\Sectionmark\sectionmark
+\def\sectionmark#1{\def\Sectionname{#1}\Sectionmark{#1}}
 \let\Subsectionmark\subsectionmark
 \def\subsectionmark#1{\def\Subsectionname{#1}\Subsectionmark{#1}}
+\let\Subsubsectionmark\subsubsectionmark
+\def\subsubsectionmark#1{\def\Subsubsectionname{#1}\Subsubsectionmark{#1}}
 
 \newtheoremstyle{funreq}
 {0}       % ABOVESPACE
@@ -166,8 +173,11 @@ This document provides detailed requirements about the product our team is creat
 The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
 
 \section{Definitions, acronyms, and abbreviations}
-\textit{WKGS}: Whole Knockoff Grocery Store\\
-\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store\\
+\textit{WKGS}: Whole Knockoff Grocery Store.\\
+\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store.\\
+\textit{DESC}: Description - Explanation of the functional or non-functional requirement.\\
+\textit{RAT}: Requirements Authoring Tool - This line describes why the feature exists so that an automated tool can assist with classifying each requirement.\\
+\textit{DEP}: Dependencies - Other requirements that must work correctly for this requirement to work.\\
 
 
 \section{References}
@@ -181,9 +191,9 @@ In section 2, the product will be given an overall description.  Section 3 will 
 {\let\clearpage\relax 
 \chapter{Overall Description}}
 
-The Whole Knockoffs grocery store will provide customers and employees alike a painless shopping and grocery store experience. Employees will be met with a seamless delivery and pickup process/system that eliminates the need for coordination among activities and employees. Customers will benefit similarly from the seamless intersection between item selection and delivery, making their shopping experience the easiest part of every customer's day. 
+The Whole Knockoffs grocery store will provide customers and employees alike a web-based shopping and grocery store experience. Employees will be met with a delivery and pickup process/system that eliminates the need for coordination among activities and employees. Customers will benefit similarly from the seamless intersection between item selection and delivery, making their shopping experience the easiest part of every customer's day. 
 
-Shoppers are will be met with an easy, convenient, user friendly item selection interface from the webpage. Coupling a simple, easy to use item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. In addition to the Whole Knockoff's online shopping experience there will be in store self-checkout options and traditional checkout procedures. All items, whether purchased through the web interface or in-store, will be cataloged and will belong to a catalog of items in the database so that store operators can more easily keep track of merchandise needs and the quantities of all items stocked by the store.
+Shoppers are will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. In addition to the Whole Knockoff's online shopping experience there will be in store self-checkout options and traditional checkout procedures. All items, whether purchased through the web interface or in-store, will be cataloged and will belong to a catalog of items in the database so that store operators can more easily keep track of merchandise needs and the quantities of all items stocked by the store.
 
 
 \section{Product Perspective}
@@ -197,7 +207,7 @@ Shoppers are will be met with an easy, convenient, user friendly item selection 
 %	\indent g)Operations;\\
 %	\indent h)Site adaptation requirements.}
 %$<$ 
-The system is not expected to interface with any other systems outside the store webpage. The employee interface and customer facing portion of the webpage will be seperate but interface together on the same application. Although the webpage is standalone and will not or is not currently expected to be able to manage the needs of multiple stores but may be a necessary requirement for the future of the Whole Knockoffs brand expansion. %$>$
+The inventory system is expected to interface with the store's checkout registers and the store web page. The employee interface and customer facing portion of the webpage will be separate but interface together on the same application. Although the web page is standalone and will not or is not currently expected to be able to manage the needs of multiple stores but may be a necessary requirement for the future of the Whole Knockoffs brand expansion. %$>$
 
 \section{Product Functions}
 %\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
@@ -205,8 +215,8 @@ The system is not expected to interface with any other systems outside the store
 %	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
 %$<$ 
 \begin{itemize}
-    \item Shopping list creation - the shopping list creation tools will allow customers to build/fill their shopping carts with all of the items the desire to purchase and store the information for later purchase through the webpage or to take the shopping cart/list with them as they browse the store.
-    \item Online checkout - through the webpage will offer the ability to customers to purchase all or some of the items in their cart in addition to selecting the type of delivery/pickup they desire.
+    \item Shopping list creation - the shopping list creation tools will allow customers to build/fill their shopping carts with all of the items the desire to purchase and store the information for later purchase through the web page or to take the shopping cart/list with them as they browse the store.
+    \item Online checkout - through the web page will offer the ability to customers to purchase all or some of the items in their cart in addition to selecting the type of delivery/pickup they desire.
     \item Delivery/pickup of items - functions to alert employees of the desire of the customer as to which preferred delivery method suites their lifestyle most comfortably, alerting employees to the method by which they are to aid the customer in obtaining their goods.
 \end{itemize}% $>$
 
@@ -214,7 +224,7 @@ The system is not expected to interface with any other systems outside the store
 %\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 
 %$<$ 
-There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Shoppers will be given the choice to involve themselves in almost any stage of the shopping experience or remain absent throughout the entire process. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the webpage. %$>$
+There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the web page. %$>$
 
 \section{Constraints}
 %\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
@@ -230,7 +240,7 @@ There are two main user classes, shoppers and employees. These two classes are b
 %j)Criticality of the application;\\
 %k)Safety and security considerations.\\}
 %$<$ 
-There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the webpage during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. %$>$
+There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the web page during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. %$>$
 
 \section{Assumptions and Dependencies}
 %\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
@@ -279,15 +289,43 @@ When the customer clicks on the cart icon, the user can then view a list, the qu
 		\end{minipage}
 	}
 \end{figure}
-When the user is logged in, the user will then be presented with the payment screen.  If the user does not have any stored page information or the user is a guest, they will be presented with a user interface similar to Figure \ref{payment}.  
+When the user is logged in, the user will then be presented with the payment screen.  If the user does not have any stored page information or the user is a guest, they will be presented with a user interface similar to Figure \ref{payment}.  After the customer's payment method is approved, The customer will be able to move to select how they would like to obtain their groceries.  If the customer wishes to have their groceries delivered, they will be presented with an interface similar to Figure \ref{delivery}.
 
 \begin{figure}[H]
-	\includegraphics[width=6 in]{UserDiagram5.png}
-	\caption{Payment Info}
-	\label{payment}
+	\mbox{
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram5.png}
+			\caption{Payment Info}
+			\label{payment}
+		\end{minipage}
+		
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram6.png}
+			\caption{Delivery Selection Page}
+			\label{delivery}
+		\end{minipage}
+	}
 \end{figure}
 
-$<$Placeholder for more user interface$>$
+If the customer selects pickup to obtain their groceries, they will see an interface similar to Figure \ref{pickup}.  After the user has finished entering the required information, The user will be presented with an order summary that shows them a confirmation of their order.  This interface is shown in Figure \ref{completed}.
+
+\begin{figure}[H]
+	\mbox{
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram7.png}
+			\caption{Pickup Selection Page}
+			\label{pickup}
+		\end{minipage}
+		
+		\begin{minipage}{0.45\textwidth}
+			\includegraphics[width=\textwidth]{UserDiagram8.png}
+			\caption{Order Completion Page}
+			\label{completed}
+		\end{minipage}
+	}
+\end{figure}
+
+%$<$Placeholder for more user interface$>$
 
 \subsection{Hardware Interfaces}
 The website application will be online and is accessible via web portal, no hardware needed. 
@@ -342,7 +380,8 @@ The website application must have accessed communication to a separate inventory
 	%\paragraph[]{\normalfont A checkout page must be available for the users to fill in the required personal information to complete the order.}
 	%\paragraph[]{\normalfont A user must be logged in as an existing user/member or guest.}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{online_checkout}
 		TITLE: Online checkout - Allow everyone to checkout online\\
@@ -461,7 +500,8 @@ Existing users: When the “log in” button is pressed, the system will direct 
 Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
 
 \subsubsection{Associated functional requirements}
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 
 \begin{funreq}
 	
@@ -505,7 +545,8 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	\end{table}
 \end{funreq}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{account_createstaff}
 	TITLE: Create a new Staff account\\
@@ -514,7 +555,8 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	DEP: None\\
 \end{funreq}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{account_login}
 	TITLE: Login into Account\\
@@ -537,7 +579,7 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	Existing users/members/guests:  The users can only view the availability of store items on the store website.\\
 	
 	\subsubsection{Associated functional requirements}
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		
 		\label{inventory_create}
@@ -557,7 +599,8 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	%	DEP: \reqref{inventory_create}
 	%\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%	\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{inventory_increasenumber}
 		TITLE: Add quantity of grocery item
@@ -566,7 +609,8 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 		DEP: \reqref{inventory_create}
 	\end{funreq}
 
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{inventory_decreasenumber}
 		TITLE: Decrease quantity of grocery item
@@ -575,7 +619,8 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 		DEP: \reqref{inventory_create}
 	\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		
 		\label{inventory_remove}
@@ -617,7 +662,8 @@ This feature allows customers on the website to see which items the grocery stor
 On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
 \subsubsection{Associated functional requirements}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_home}
 	TITLE: Storefront homepage\\
@@ -627,10 +673,11 @@ On the Storefront homepage/category page: Listing of items available should be d
 \end{funreq}
 
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_listcategory}
-	~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
+%	~\\\unsure[inline]{does this show out of stock items but not allow purchase or hide out of stock items?}
 	TITLE: Display items in inventory\\
 	DESC: When a category is selected, the storefront shall display all items matching the selected category that are in inventory.\\
 	RAT: So that a customer can quickly find items.\\
@@ -668,7 +715,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\end{table}
 \end{funreq}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_search}
 	TITLE: Search for available items\\
@@ -677,7 +725,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	DEP: \reqref{inventory_create}\\
 \end{funreq}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_details}
 	TITLE: Display item details\\
@@ -686,7 +735,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	DEP: \reqref{store_listcategory}\\
 \end{funreq}
 
-\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_displaysales}
 	TITLE: Display sale items to customers\\
@@ -715,7 +765,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	
 	\subsubsection{Associated functional requirements}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		
 		\label{cart_add}
@@ -765,7 +816,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\end{funreq}
 
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{card_buy}
 		TITLE: Buy items from the shopping cart\\
@@ -791,7 +843,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	%\paragraph[]{\normalfont Managers must be able to assign work days to employees.}
 	%\paragraph[]{\normalfont Employees must be able to view their current assignments.}
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_login}
 		TITLE: Employee login\\
@@ -800,7 +853,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 		DEP: none
 	\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_addremove}
 		TITLE: Add or remove employees\\
@@ -809,7 +863,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 		DEP: none
 	\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_role}
 		TITLE: Employee role\\
@@ -818,7 +873,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 		DEP: \reqref{employee_addremove}
 	\end{funreq}
 
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_assign}
 		TITLE: Manager assign work days\\
@@ -866,7 +922,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 		\end{table}
 	\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_viewwork}
 		TITLE: Employee view assignments\\
@@ -875,7 +932,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 		DEP: \reqref{employee_assign}
 	\end{funreq}
 	
-	\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_clock}
 		TITLE: Employee clock-in/clock-out\\
@@ -896,13 +954,15 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\looseness=-1
 	
 	\subsubsection{Associated functional requirements}
-	\paragraph[]{Delivery option – Delivery address validation}
+	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
+	%\paragraph[]{Delivery option – }
 	\begin{funreq}
 	\label{grocery_deliveryaddr}
 	~
 %	\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm} }\end{flushleft}
 
 		\begin{table}[H]
+			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Delivery address validation}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai M. & Date Created    & 03/23/2020 
@@ -947,14 +1007,16 @@ On the Storefront homepage/category page: Listing of items available should be d
 		\end{table}
 	\end{funreq}
 	
-
-	\paragraph[]{Delivery option – Receive online order for delivery}
+	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
+%	\paragraph[]{Delivery option – Receive online order for delivery}
 	\begin{funreq}
 	\label{grocery_deliveryreceive}
 	~
 %	\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm} }\end{flushleft}
 
 		\begin{table}[H]
+			
+			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Receive online order for delivery}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai M. & Date Created    & 03/23/2020 
@@ -1002,13 +1064,15 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\end{funreq}
 
 
-	\paragraph[]{In-store pickup option – User selects pickup time }
+%	\paragraph[]{In-store pickup option – User selects pickup time }
+	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 	\begin{funreq}
 	\label{grocery_pickuptime}
 	~
 %	\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm} }\end{flushleft}
 
 		\begin{table}[H]
+			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}User selects pickup time}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai M. & Date Created    & 03/23/2020 
@@ -1052,13 +1116,15 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\end{funreq}
 
 
-	\paragraph[]{In-store pickup option – Receive online order for in-store pickup}
+%	\paragraph[]{In-store pickup option – Receive online order for in-store pickup}
+	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 	\begin{funreq}
 	\label{grocery_pickupreceive}
 	~
 %	\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm} }\end{flushleft}
 
 		\begin{table}[H]
+			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Receive online order for in-store pickup}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai M. & Date Created    & 03/23/2020 
@@ -1116,7 +1182,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	The website shall be mobile friendly.
 
     \subsection{Website Useability}
-    The website’s storefront shall be user friendly (easy to use) to promote consumer’s usabilities.
+    The website’s storefront shall use a legible font with a font size 12 pt or larger to promote consumer’s usabilities.
 
     \subsection{Payment Security}
     The website shall protect consumer’s personal data, which shall provide the consumer peace of mind and trust when using the website.
