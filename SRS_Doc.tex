@@ -167,7 +167,7 @@
 \chapter{Introduction}
 
 \section{Purpose}
-This document provides detailed requirements about the product our team is creating for the customer.  This document is intended for the customers and the software team designing as a reference on the desired behaviors and requirements of the program.
+This document provides detailed requirements about the product, Whole Knockoffs webpage, that our team is creating for our customer, the owners of Whole Knockoffs.  This document is intended for said customers and our software team as a reference on for the desired behaviors and requirements of the application.
 
 \section{Scope}
 The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
@@ -328,13 +328,13 @@ If the customer selects pickup to obtain their groceries, they will see an inter
 %$<$Placeholder for more user interface$>$
 
 \subsection{Hardware Interfaces}
-The website application will be online and is accessible via web portal, no hardware needed. 
+The application will have to interface with several hardware components for both employee and customer needs. The application will need to provide, potentially, scanning/item additions for customers and will certainly need to allow employees to scan products for both checkout and inventory stocking. Employees will be given scanners for item inventory that will look for information from the website for inventory counts and relay this information for stocking, this will need to be relayed to the online checkout portions of the website so that customers have access to the most up-to-date item inventory status.
 
 \subsection{Software Interfaces}
-The website application will communicate with a GPS application for delivery locations.
+The webpage must communicate with GPS applications for delivery locations in addition to other customer devices for pickup/delivery purposes. Potentially the webpage must also be able to interface with third party application which we will discuss further in Section 2 above. All/most employee activities will be performed with technology that communicates with the webpage for timekeeping, customer checkout, item inventory, delivery, and other various activities in the store; all activities/technologies will run potentially independent software that must interface with website.
 
-\subsection{Communications Interfaces}
-The website application must have accessed communication to a separate inventory system from the Whole Knockoffs Grocery for inventory data; up to date inventory data is dependent on the store's inventory system. 
+% \subsection{Communications Interfaces}
+% The website application must have access communication to a separate inventory system from the Whole Knockoffs Grocery for inventory data; up to date inventory data is dependent on the store's inventory system. 
 
 \section{System Features}
 
@@ -945,7 +945,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsection{Delivery/Pickup System}
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-    This feature shall allow customers to select where they want to obtain their groceries purchased online; either in-store pickup or delivery. This system shall assign an employee to prepare an online order received and notify the delivery employee or customer when an online order is ready.
+    This feature shall allow customers to select where they want to obtain their groceries once they have completed their purchase online, both in-store pickup and home delivery options will be available. The system shall assign an employee to prepare an online order once received by the system and will notify the delivery employee or customer when an online order is ready.
 
 	\subsubsection{Stimulus/Response sequence}
 	Delivery: If the user selects delivery during checkout, the system will check if the user has an address on file.  If the user does not have an address, the system will prompt them to add one.  After confirming the customer address and the customer completes a delivery order, an employee will be notified using the website about which groceries have to be collected from the store.  After the employee completes the grocery collection, a driver will be notified of where to pickup the groceries and the location to deliver the groceries.
@@ -1206,10 +1206,10 @@ On the Storefront homepage/category page: Listing of items available should be d
 	
 	\section{Software quality attributes}
 	\subsection{Reliability}
-	The system shall provide the right results on search. The systems shall accurately represent available products and their accurate quantities.
+	While searching the system customers shall receive correct results on item searches concerning availability, price, and other item specific details. Delivery time and method will also be guaranteed through the website.
 	
 	\subsection{Availability}
-	The system shall be accessible online at all times except in an instance where maintenance/upgrade is ongoing and a notification has been duly broadcast .
+	The system shall be accessible online at all times except in an instance where maintenance/upgrade is ongoing and a notification has been broadcast.
 	%\section{Business Rules}
 	%$<$ Placeholder $>$
 	
