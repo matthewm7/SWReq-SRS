@@ -167,14 +167,15 @@
 \chapter{Introduction}
 
 \section{Purpose}
+%Need to reword, a little bit confusion
 This document provides detailed requirements about the product, Whole Knockoffs webpage, that our team is creating for our customer, the owners of Whole Knockoffs.  This document is intended for said customers and our software team as a reference on for the desired behaviors and requirements of the application.
 
 \section{Scope}
-The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal shoppers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using a storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The system should also handle the inventory management for the entire store.  The inventory should be able to communicate with the store's point of sale systems and website so that correct inventory is maintained when items are purchased.  This will allow the store owners to know what items are in-stock and which items might need to be re-ordered.
+The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal customers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using the website storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The website also update items quanities counts to the WKGS's separate inventory system.
 
 \section{Definitions, acronyms, and abbreviations}
 \textit{WKGS}: Whole Knockoff Grocery Store.\\
-\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store.\\
+%\textit{POS}: Point of Sale system - Cash registers that are used to scan and sell groceries in-store.\\
 \textit{DESC}: Description - Explanation of the functional or non-functional requirement.\\
 \textit{RAT}: Requirements Authoring Tool - This line describes why the feature exists so that an automated tool can assist with classifying each requirement.\\
 \textit{DEP}: Dependencies - Other requirements that must work correctly for this requirement to work.\\
@@ -191,9 +192,10 @@ In section 2, the product will be given an overall description.  Section 3 will 
 {\let\clearpage\relax 
 \chapter{Overall Description}}
 
-The Whole Knockoffs grocery store will provide customers and employees alike a web-based shopping and grocery store experience. Employees will be met with a delivery and pickup process/system that eliminates the need for coordination among activities and employees. Customers will benefit similarly from the seamless intersection between item selection and delivery, making their shopping experience the easiest part of every customer's day. 
+The WKGS will provide customers and employees alike a web-based shopping and grocery store experience. Employees will be met with a delivery and pickup process/system that eliminates the need for coordination among activities and employees. Customers will benefit similarly from the seamless intersection between item selection and delivery, making their shopping experience the easiest part of every customer's day. 
 
-Shoppers are will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. In addition to the Whole Knockoff's online shopping experience there will be in store self-checkout options and traditional checkout procedures. All items, whether purchased through the web interface or in-store, will be cataloged and will belong to a catalog of items in the database so that store operators can more easily keep track of merchandise needs and the quantities of all items stocked by the store.
+%Need to reword, I don't understand the first part of this
+Customers are will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. All items, whether purchased through the web protal or in-store, will be communicated to the WKGS's inventory system.
 
 
 \section{Product Perspective}
@@ -215,16 +217,16 @@ The system is expected to interface with the store's existing inventory system a
 %	b)Textual  or  graphical  methods  can  be  used  to  show  the  different  functions  and  their  relationships.Such a diagram is not intended to show a design of a product, but simply shows the logical relation-ships among variables.}
 %$<$ 
 \begin{itemize}
-    \item Shopping list creation - the shopping list creation tools will allow customers to build/fill their shopping carts with all of the items the desire to purchase and store the information for later purchase through the web page or to take the shopping cart/list with them as they browse the store.
-    \item Online checkout - through the web page will offer the ability to customers to purchase all or some of the items in their cart in addition to selecting the type of delivery/pickup they desire.
-    \item Delivery/pickup of items - functions to alert employees of the desire of the customer as to which preferred delivery method suites their lifestyle most comfortably, alerting employees to the method by which they are to aid the customer in obtaining their goods.
+    \item Shopping list creation - The shopping list creation tools will allow customers to build/fill their shopping carts with all of the items desired to purchase and store the shopping list for later purchase through the web page or to take the shopping cart/list with them as they browse the store in person.
+    \item Online checkout - The web page will offer the ability for customers to purchase all or some of the items in their cart in addition to selecting the type of delivery/pickup they desire.
+    \item Delivery/pickup of items - Functions to alert employees of customer's  preferred delivery method suites their lifestyle most comfortably, alerting employees to the method by which they are to aid the customer in obtaining their goods.
 \end{itemize}% $>$
 
 \section{User Classes and Characteristics}
 %\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 
 %$<$ 
-There are two main user classes, shoppers and employees. These two classes are broken down into paths for shoppers and roles for employees. Shopper paths will involve member and guest checkout, will feature shopping cart/wish list functionality and will allow the user to choose much of the shopping process from the site. Employee roles will guard the employees through their in-store duties and through their duties that come down directly from the web page. %$>$
+There are two main user classes, customers and employees. These two classes are broken down into paths for customers and roles for employees. Customer paths will involve member and guest checkout, will feature shopping cart/list functionality and will allow the customer to choose much of the shopping process from the site. Employee roles will guard the employees through their in-store duties and through their duties that come directly from the web page. %$>$
 
 \section{Constraints}
 %\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
@@ -240,13 +242,13 @@ There are two main user classes, shoppers and employees. These two classes are b
 %j)Criticality of the application;\\
 %k)Safety and security considerations.\\}
 %$<$ 
-There are several constraints to the system, none of these constraints focuses around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the web page during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for the either the employee/shopping portions of the site. %$>$
+There are several constraints to the system, none of these constraints focus around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the web page during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for either the employee/shopping portions of the site. %$>$
 
 \section{Assumptions and Dependencies}
 %\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
 %$<$ 
-Several future dependencies could change the requirements for the \textit{Whole Knockoffs} grocery store purchasing/employee site. Integration with other shopping applications could alter the amount of information displayed by the site and how the site handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{Whole Knockoffs} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. %$>$
-
+Several future dependencies could change the requirements for the \textit{WKGS} purchasing/employee website. Integration with other shopping applications could alter the amount of information displayed by the website and how the website handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{WKGS} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. %$>$
+%Who are user? If can't use different term, need to add user into Definition
 
 
 {\let\clearpage\relax 
@@ -256,7 +258,7 @@ Several future dependencies could change the requirements for the \textit{Whole 
 
 \subsection{User Interfaces}
 
-When a customer first visits the Whole Knockoffs grocery store website, the user will initially see a page similar to Figure \ref{homepage}.  This page will show the customer deals that the store wants to promote.  When the customer clicks on an item box, an item details page similar to the one in Figure \ref{item_page} should be shown. From this page, the user can view details about the item, view images of the item, and add the desired quantity to the shopping cart.
+When a customer first visits the \textit{WKGS} website, the user will initially see a page similar to Figure \ref{homepage}.  This page will show the customer deals that the store wants to promote.  When the customer clicks on an item box, an item details page similar to the one in Figure \ref{item_page} should be shown. From this page, the user can view details about the item, view images of the item, and add the desired quantity to the shopping cart.
 \begin{figure}[H]
 	\mbox{
 		\begin{minipage}{0.45\textwidth}
@@ -273,7 +275,7 @@ When a customer first visits the Whole Knockoffs grocery store website, the user
 	}
 \end{figure}
 
-When the customer clicks on the cart icon, the user can then view a list, the quantity, and the total price for the items that the user selected.  Using an interface similar to Figure \ref{cart}, the user can change the quantity and review their order.  If the user is not logged in to the system, they will be prompted to login to the page shown in Figure \ref{login}.  
+When the customer clicks on the cart icon, the customer can then view a list, the quantity, and the total price for the items that the customer selected.  Using an interface similar to Figure \ref{cart}, the customer can change the quantity and review their order.  If the customer is not logged in to the system, they will be prompted to login to the page shown in Figure \ref{login}.  
 \begin{figure}[H]
 	\mbox{
 		\begin{minipage}{0.45\textwidth}
@@ -289,7 +291,7 @@ When the customer clicks on the cart icon, the user can then view a list, the qu
 		\end{minipage}
 	}
 \end{figure}
-When the user is logged in, the user will then be presented with the payment screen.  If the user does not have any stored page information or the user is a guest, they will be presented with a user interface similar to Figure \ref{payment}.  After the customer's payment method is approved, The customer will be able to move to select how they would like to obtain their groceries.  If the customer wishes to have their groceries delivered, they will be presented with an interface similar to Figure \ref{delivery}.
+When the customer is logged in, the customer will then be presented with the payment screen.  If the customer does not have any stored page information or the customer is a guest, they will be presented with a customer interface similar to Figure \ref{payment}.  After the customer's payment method is approved, The customer will be able to move to select how they would like to obtain their groceries.  If the customer wishes to have their groceries delivered, they will be presented with an interface similar to Figure \ref{delivery}.
 
 \begin{figure}[H]
 	\mbox{
@@ -307,7 +309,7 @@ When the user is logged in, the user will then be presented with the payment scr
 	}
 \end{figure}
 
-If the customer selects pickup to obtain their groceries, they will see an interface similar to Figure \ref{pickup}.  After the user has finished entering the required information, The user will be presented with an order summary that shows them a confirmation of their order.  This interface is shown in Figure \ref{completed}.
+If the customer selects pickup to obtain their groceries, they will see an interface similar to Figure \ref{pickup}.  After the customer has finished entering the required information, The customer will be presented with an order summary that shows them a confirmation of their order.  This interface is shown in Figure \ref{completed}.
 
 \begin{figure}[H]
 	\mbox{
@@ -332,7 +334,7 @@ If the customer selects pickup to obtain their groceries, they will see an inter
 Because the customer is responsible for the hardware and the inventory system, this application will not directly interface with hardware components. 
 
 \subsection{Software Interfaces}
-The web page must communicate with the inventory system for tracking and maintaining accurate inventory counts.  Using the existing customer's inventory API, the web site will communicate with the inventory system to obtain item quantities and item prices.  The web site will also deduct item quantities once purchases are complete.
+The website must communicate with the inventory system for tracking and maintaining accurate inventory counts.  Using the existing customer's inventory API, the web site will communicate with the inventory system to obtain item quantities and item prices.  The web site will also deduct item quantities once purchases are complete. 
 %The web page must communicate with GPS applications for delivery locations in addition to other customer devices for pickup/delivery purposes. Potentially the web page must also be able to interface with third party application which we will discuss further in Section 2 above. All/most employee activities will be performed with technology that communicates with the web page for timekeeping, customer checkout, item inventory, delivery, and other various activities in the store; all activities/technologies will run potentially independent software that must interface with website.
 
 
@@ -368,27 +370,27 @@ The web page must communicate with the inventory system for tracking and maintai
 	
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The checkout feature allows users to pay for their item(s) currently in the Cart list to complete their order. Depending on type of users, the feature should preload required user’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the users can specify payment and delivery options on the checkout page. 
+	The checkout feature allows users to pay for their item(s) currently in the Shopping list to complete their order. Depending on type of customers, the feature should preload required customer’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the customers can specify payment and delivery options on the checkout page. 
 	
-	\subsubsection{Stimulus/Response sequence}
-	Existing users/members:
-	When the “Checkout” option is clicked, the system will direct the user to the checkout page. On the checkout page, certain user information should be preloaded to help ease the checkout process. The user will have the option to use saved payment information or a different payment method. In addition, the user can select different delivery options including: in-store pickup or home delivery. If a user chooses home delivery, the system will use the user's saved home address. If the user chooses in-store pickup by car, the system will request car model information. The user will need to click “Complete Order” to process the order.
-	Guest users: 
-	When the “Checkout” option is clicked, the system will direct the user to the checkout page. On the checkout page, the user would need to fill in all the required information needed for the checkout process. The user must select the payment method; the system will ask for billing address and payment information. In addition, the user can select different delivery options including: in-store pickup or home delivery. If a user chooses home delivery, the system will request a home address. If the user chooses in-store pickup by car, the system will request car model information. The user will need to click “Complete Order” to process the order.
+%	\subsubsection{Stimulus/Response sequence}
+%	Existing users/members:
+%	When the “Checkout” option is clicked, the system will direct the user to the checkout page. On the checkout page, certain user information should be preloaded to help ease the checkout process. The user will have the option to use saved payment information or a different payment method. In addition, the user can select different delivery options including: in-store pickup or home delivery. If a user chooses home delivery, the system will use the user's saved home address. If the user chooses in-store pickup by car, the system will request car model information. The user will need to click “Complete Order” to process the order.
+%	Guest users: 
+%	When the “Checkout” option is clicked, the system will direct the user to the checkout page. On the checkout page, the user would need to fill in all the required information needed for the checkout process. The user must select the payment method; the system will ask for billing address and payment information. In addition, the user can select different delivery options including: in-store pickup or home delivery. If a user chooses home delivery, the system will request a home address. If the user chooses in-store pickup by car, the system will request car model information. The user will need to click “Complete Order” to process the order.
+%	
+%	
+\subsubsection{Associated functional requirements}
 	
-	
-	\subsubsection{Associated functional requirements}
-	
-	%\paragraph[]{\normalfont \Subsectionname ~functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-	%\paragraph[]{\normalfont A checkout page must be available for the users to fill in the required personal information to complete the order.}
-	%\paragraph[]{\normalfont A user must be logged in as an existing user/member or guest.}
+%	%\paragraph[]{\normalfont \Subsectionname ~functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%	%\paragraph[]{\normalfont A checkout page must be available for the users to fill in the required personal information to complete the order.}
+%	%\paragraph[]{\normalfont A user must be logged in as an existing user/member or guest.}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{online_checkout}
-		TITLE: Online checkout - Allow everyone to checkout online\\
-		DESC: The checkout feature should allow all users to pay for their item(s) currently in the Cart list to complete their order. Depending on type of users, the feature should preload and/or request required user’s information for the checkout process including home address for delivery, billing address, and payment method. Furthermore, the users can specify payment and delivery options on the checkout page.\\
+		TITLE: Allow everyone to checkout online\\
+		DESC: The checkout feature should allow all customers to pay for their item(s) currently in the Shopping list to complete their order. Depending on type of customers, the feature should preload and/or request required customer’s information for the checkout process including home address for delivery, billing address, and payment method. Furthermore, the customer can specify payment and delivery options on the checkout page.\\
 		RAT: In order for all users to pay for their online order.\\
 		DEP: None\\
 		
@@ -399,7 +401,7 @@ The web page must communicate with the inventory system for tracking and maintai
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai Mai & Date Created    & 03/15/2020 \\ \hline
-				Primary Actor & User        & Secondary Actor & Website \\ \hline
+				Primary Actor & Guest customer        & Secondary Actor & Website \\ \hline
 			\end{tabularx}
 			%\end{adjustbox}
 		%\end{table}
@@ -410,32 +412,37 @@ The web page must communicate with the inventory system for tracking and maintai
 					\hline
 					Description: &
 					
-					The checkout feature should let guest user complete online order with the required information, including payment and home delivery/in-store pickup options             \\ \hline
-					Trigger:         & Guest user clicks on option “checkout”                    \\ \hline
+					The checkout feature should let guest customer complete online order with the required information, including payment and home delivery/in-store pickup options             \\ \hline
+					Trigger:         & Guest customer clicks on option “checkout”                    \\ \hline
 					Preconditions    & None                                       \\ \hline
-					Postconditions   & Guest user successfully complete checkout for online orders, Payment received\\ \hline
+					Postconditions   & Guest customer successfully complete checkout for online orders, Payment received\\ \hline
 					Normal Flow &
-					\bfseries{Allow everyone to checkout online – Guest User}\normalfont\newline 
-					Guest user selects checkout option
+					\bfseries{Allow everyone to checkout online – Guest Customers}\normalfont\newline 
 					
-					Website checks for type of user \textit{Note: prompt for account login? Direct for different req path?}
 					
-					Website established guest user
+					\begin{enumerate}
+					\item Guest customer selects checkout option
 					
-					Website validates accurate pricing with additional taxes for total price
+					\item Website checks for type of customer \textit{Note: prompt for account login? Direct for different req path?}
 					
-					Website requests guest user the following information: name, payment information, billing address, option for home deliver or in-store pickup
+					\item Website established guest customer
 					
-					Guest user select “Place Order” option
+					\item Website validates accurate pricing with additional taxes for total price
 					
-					Website uses third party checkout system to validate payment transaction
+					\item Website requests guest customer the following information: name, payment information, billing address, option for home deliver or in-store pickup
 					
-					If payment is successfully validated and received, website acknowledges “Order Place” message\\ \hline
+					\item Guest customer select “Place Order” option
+					
+					\item Website uses third party checkout system to validate payment transaction
+					
+					\item If payment is successfully validated and received, website acknowledges “Order Place” message
+				\end{enumerate}
+					\\ \hline
 					
 					Alternative Flow & None                                       \\ \hline
 					Exceptions       & Payment did not successfully validate
 					
-					Guest user did not fill in the required information
+					Guest customer did not fill in the required information
 					\\ \hline
 					Priority & High                                       \\ \hline
 				\end{tabularx}%
@@ -447,7 +454,7 @@ The web page must communicate with the inventory system for tracking and maintai
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
 				Created By    & Thoai Mai & Date Created    & 03/15/2020 \\ \hline
-				Primary Actor & Member User        & Secondary Actor & Website \\ \hline
+				Primary Actor & Member Customer        & Secondary Actor & Website \\ \hline
 			\end{tabularx}
 			%\end{adjustbox}
 		%\end{table}
@@ -458,31 +465,33 @@ The web page must communicate with the inventory system for tracking and maintai
 					\hline
 					Description: &
 					
-					The checkout feature should let member user complete online order with the required information, including payment and home delivery/in-store pickup options
+					The checkout feature should let member customer complete online order with the required information, including payment and home delivery/in-store pickup options
 					\\ \hline
-					Trigger:         & Member user clicks on option “checkout”                    \\ \hline
+					Trigger:         & Member customer clicks on option “checkout”                    \\ \hline
 					Preconditions    & Logged in as a member                                       \\ \hline
-					Postconditions   & Member user successfully complete checkout for online orders, Payment received\\ \hline
+					Postconditions   & Member customer successfully complete checkout for online orders, Payment received\\ \hline
 					Normal Flow &
-					\bfseries{Allow everyone to checkout online – Member User}\normalfont\newline 
+					\bfseries{Allow everyone to checkout online – Member Customer}\normalfont\newline 
+					\begin{enumerate}
+						\item Member customer selects checkout option
 					
-					Member user selects checkout option
+						\item Website checks for type of customer
 					
-					Website checks for type of user
+						\item Website established member customer
 					
-					Website established member user
+						\item Website preloads member information: name and address
 					
-					Website preloads member information: name and address
+						\item Website validates accurate pricing with additional taxes for total price
 					
-					Website validates accurate pricing with additional taxes for total price
+						\item Website requests member customer the following information: payment information, billing address, option for home deliver or in-store pickup \textit{Note: should website keep payment information for customer}s?
 					
-					Website requests member user the following information: payment information, billing address, option for home deliver or in-store pickup \textit{Note: should website keep payment information for member}s?
+						\item Guest customer select “Place Order” option
 					
-					Guest user select “Place Order” option
+						\item Website uses third party checkout system to validate payment transaction
 					
-					Website uses third party checkout system to validate payment transaction
-					
-					If payment is successfully validated and received, website acknowledges “Order Place” message\\ \hline
+						\item If payment is successfully validated and received, website acknowledges “Order Place” message
+					\end{enumerate}
+					\\ \hline
 					
 					Alternative Flow & None                                       \\ \hline
 					Exceptions       & Payment did not successfully validate \\ \hline
@@ -495,32 +504,31 @@ The web page must communicate with the inventory system for tracking and maintai
 	\subsection{Account Management System}
 %\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
-This feature allows users to create and edit settings for grocery store accounts.  New users will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing users a convenient way to edit their password, change shipping addresses, manage stored payment information, and change other stored personal details.  From the user management profile, users will also be able to see past purchases and orders.
+This feature allows customers to create and edit settings for grocery store accounts.  New customer will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing customer (member) a convenient way to edit their password, change delivery addresses, manage stored payment information, and change other stored personal information.  From the customer management profile, customers will also be able to see past purchases and orders.
 
-\subsubsection{Stimulus/Response sequence}
-\indent New users: When the “sign up” button is pressed, the system will direct the user to select a username and password to create their account.  After the user fills appropriate values into these fields, the user will be able to sign in using the credentials selected.
-Existing users: When the “log in” button is pressed, the system will direct the user to enter their credentials to sign into the system.  
-Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
-
+%\subsubsection{Stimulus/Response sequence}
+%\indent New users: When the “sign up” button is pressed, the system will direct the user to select a username and password to create their account.  After the user fills appropriate values into these fields, the user will be able to sign in using the credentials selected.
+%Existing users: When the “log in” button is pressed, the system will direct the user to enter their credentials to sign into the system.  
+%Logged-in users: When a user is logged-in and presses the “my account” button, the user will be brought to a page where they can edit their personal details
+%
 \subsubsection{Associated functional requirements}
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
-
 \begin{funreq}
 	
 	\label{account_create}
-	TITLE: Create a new User account\\
-	DESC: A user should be able to register through the website. The user must provide user-name, password and e-mail address. \\
-	RAT: In order for a user to register an account\\
+	TITLE: Create a new customer account\\
+	DESC: A customer should be able to register through the website. The customer must provide username, password and e-mail address. \\
+	RAT: In order for a customer to register an account\\
 	DEP: None\\
 	
-	\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a User new account}
+	\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a new member account}
 	\begin{table}[H]
 		%\begin{adjustbox}{width=\textwidth}
 		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 			\hline
 			Created By    & Emmanuel .W & Date Created    & 03/13/20 \\ \hline
-			Primary Actor & User        & Secondary Actor & Website \\ \hline
+			Primary Actor & Customer        & Secondary Actor & Website \\ \hline
 		\end{tabularx}
 		%\end{adjustbox}
 		%\end{table}
@@ -530,16 +538,20 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 			\begin{tabularx}{\columnwidth}{|l|X|}
 				\hline
 				Description: &
-				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
-				Trigger:         & User Clicks on register                    \\ \hline
+				A customer should be able to register through the website. The customer must provide a name, username, password and e-mail address. \\ \hline
+				Trigger:         & Customer clicks on "Register" option                    \\ \hline
 				Preconditions    & None                                       \\ \hline
-				Postconditions   & Account is created, User is Logged in      \\ \hline
+				Postconditions   & Account is created, Customer is Logged in      \\ \hline
 				Normal Flow &
-				\bfseries{Create a User new account}\normalfont\newline 
-				User Clicks on Register Enters name, user-name, password and e-mail address.\newline
-				Website confirms it is a unique entry and save the new user details\newline
-				Website Informs User of successful creation\newline
-				Website Logs user in \\ \hline
+				\bfseries{Create a new Member account}\normalfont\newline 
+				\begin{enumerate}
+					\item Customer Clicks on Register Enters name, user-name, password and e-mail address.
+				%Needs clarify****************************************
+				\item Website confirms it is a unique entry and save the new member details
+				\item Website Informs customer of successful creation
+				\item Website Logs customer in 
+				\end{enumerate}
+				\\ \hline
 				Alternative Flow & None                                       \\ \hline
 				Exceptions       & Email Address already exists in the system \\ \hline
 				Priority         & High                                       \\ \hline
@@ -574,7 +586,7 @@ Logged-in users: When a user is logged-in and presses the “my account” butto
 	\subsection{Inventory}
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	This section details what features of the how the website will communicate with the inventory system.  This will include when specific features of the database will be queried and accessed.  
+	This section details what features of the how the website shall communicate with the inventory system.  This shall includes when specific features of the inventory system will be queried and accessed.  
 	%The inventory stores information about the type, quantity, price and price of all the items that the grocery store stocks. The inventory feature allows different privileges to manage the store items according to the type of users. This feature will create items summary purchased by day, month and year. The user can assign what items to be on-sale. The feature updates item inventory after each completed consumer purchase.
 	
 	\subsubsection{Stimulus/Response sequence}
@@ -738,13 +750,16 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{tabularx}{\columnwidth}{|l|X|}
 				\hline
 				Description: &
-				A user should be able to register through the website. The user must provide a name, user-name, password and e-mail address. \\ \hline
-				Trigger:         & User selects category to filter by         \\ \hline
+				A user should be able to register through the website. The user must provide a name, username, password and e-mail address. \\ \hline
+				Trigger:         & Customer selects category to filter by         \\ \hline
 				Preconditions    & Items have category specified in the inventory             \\ \hline
 				Postconditions   & The storefront displays only items that have the listed category    \\ \hline
 				Normal Flow &
-				The customer selects a store category from the homepage of the website\newline
-				The website updates the list of displayed items with the selected category\\ \hline
+				\begin{enumerate}
+				\item The customer selects a store category from the homepage of the website
+				\item The website shall update the list of displayed items with the selected category
+				\end{enumerate}
+				\\ \hline
 				Alternative Flow & None                                       \\ \hline
 				Exceptions       & No items with the selected category exist \\ \hline
 				Priority         & High                                       \\ \hline
@@ -757,7 +772,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_search}
-	TITLE: Search for available items\\
+	TITLE: Search for available store items\\
 	DESC: When a search term is entered in the searchbox, the storefront shall display all items matching the query.\\
 	RAT: So that a customer can quickly find items.\\
 	DEP: \reqref{inventory_quantity}\\
@@ -767,7 +782,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_details}
-	TITLE: Display item details\\
+	TITLE: Display store item details\\
 	DESC: When the customer clicks on an item on the storefront, the item details are displayed.  The details include a product description and price\\
 	RAT: So that a customer can know what they are buying\\
 	DEP: \reqref{store_listcategory}\\
@@ -788,14 +803,15 @@ On the Storefront homepage/category page: Listing of items available should be d
 %\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
 %\paragraph[]{\normalfont The search option must return storefront items that match the customer’s query.}
 
-	\subsection{Shopping list/cart}
+	\subsection{Shopping cart/list}
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The shopping list/cart feature allows the user to manage their selected item(s). The feature includes information on items’ price, availability, and location in the store. In addition, the user can change the quantity of item(s) to be purchased or remove item(s) from the shopping list/cart.
+	The shopping cart/list feature allows the user to manage their selected store item(s). The feature includes information on item's price, availability, and location in the store. In addition, the user can change the quantity of item(s) to be purchased or remove item(s) from the shopping cart/list.
 	
 	\subsubsection{Stimulus/Response sequence}
 	Existing users/members/guest:
 	The users can edit item’s quantity and remove item from shopping list/cart. When the users are satisfied with their selected items, they can click the “Checkout” option to begin the checkout process. 
+	
 	Existing users/members:
 	The users are allowed to save shopping lists to their account.
 	
@@ -803,80 +819,85 @@ On the Storefront homepage/category page: Listing of items available should be d
 	
 	\subsubsection{Associated functional requirements}
 	
-	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
-	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
-	\begin{funreq}
-		
-		\label{cart_add}
-		TITLE: Fill your shopping cart\\
-		DESC: A user/member (must be logged in and have created an account) should be able to look through our online shopping catalog and select items to place in his/her shopping cart. \\
-		RAT: In order for a user to add items to their shopping cart from the catalog of items\\
-		DEP: Must be a member\\
-		
-
-%	\clearpage
-		\begin{table}[H]
-		\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create your shopping cart}\end{flushleft}
-			%\begin{adjustbox}{width=\textwidth}
-			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
-				\hline
-				Created By    & Howie Hill & Date Created    & 03/15/20 \\ \hline
-				Primary Actor & User        & Secondary Actor & Website \\ \hline
-			\end{tabularx}
-			%\end{adjustbox}
-		%\end{table}
-		
-		%\begin{table}[h!]
-			\resizebox{\textwidth}{!}{%
-				\begin{tabularx}{\columnwidth}{|l|X|}
-					\hline
-					Description: &
-					A user should be able to register login though the website, shop the catalog of online items, and add any in-stock items to his/her shopping cart. \\ \hline
-					Trigger:         & User clicks add item to shopping cart                \\ \hline
-					Preconditions    & logged in as a registered user                                       \\ \hline
-					Postconditions   & item/s in the shopping cart      \\ \hline
-					Normal Flow &
-					\bfseries{Compose shopping cart}\normalfont\newline 
-					User Clicks to search the catalog of online items\newline
-					Website shows the items\newline
-					Next to each of the items there is an "add to cart" button\newline
-					Button is clicked and the item is added to the cart 
-					
-					now the user can search through all of the items that have been added to the cart and go through his/her catalog of items in the cart \\ \hline
-					Alternative Flow & None                                       \\ \hline
-					Exceptions       & Item is out of stock
-					
-					user is not registered/logged in \\ \hline
-					Priority         & High                                       \\ \hline
-				\end{tabularx}%
-			}
-		\end{table}
-	\end{funreq}
+%****************************************************************************************************************
+%Not sure what is this requirement doing, ALL customers can add items into cart. Add item into shopping cart is simple and I don't think it reuqires this table format
+%****************************************************************************************************************	
+%%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+%\begin{funreq}
+%	
+%	\label{cart_add}
+%	TITLE: Fill your shopping cart\\
+%	DESC: A user/member (must be logged in and have created an account) should be able to look through our online shopping catalog and select items to place in his/her shopping cart. \\
+%	RAT: In order for a user to add items to their shopping cart from the catalog of items\\
+%	DEP: Must be a member\\
+%	
+%	
+%	%	\clearpage
+%	\begin{table}[H]
+%		\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create your shopping cart}\end{flushleft}
+%		%\begin{adjustbox}{width=\textwidth}
+%		\begin{tabularx}{\columnwidth}{|X|X|X|X|}
+%			\hline
+%			Created By    & Howie Hill & Date Created    & 03/15/20 \\ \hline
+%			Primary Actor & User        & Secondary Actor & Website \\ \hline
+%		\end{tabularx}
+%		%\end{adjustbox}
+%		%\end{table}
+%		
+%		%\begin{table}[h!]
+%		\resizebox{\textwidth}{!}{%
+%			\begin{tabularx}{\columnwidth}{|l|X|}
+%				\hline
+%				Description: &
+%				A user should be able to register login though the website, shop the catalog of online items, and add any in-stock items to his/her shopping cart. \\ \hline
+%				Trigger:         & User clicks add item to shopping cart                \\ \hline
+%				Preconditions    & logged in as a registered user                                       \\ \hline
+%				Postconditions   & item/s in the shopping cart      \\ \hline
+%				Normal Flow &
+%				\bfseries{Compose shopping cart}\normalfont\newline 
+%				User Clicks to search the catalog of online items\newline
+%				Website shows the items\newline
+%				Next to each of the items there is an "add to cart" button\newline
+%				Button is clicked and the item is added to the cart 
+%				
+%				now the user can search through all of the items that have been added to the cart and go through his/her catalog of items in the cart \\ \hline
+%				Alternative Flow & None                                       \\ \hline
+%				Exceptions       & Item is out of stock
+%				
+%				user is not registered/logged in \\ \hline
+%				Priority         & High                                       \\ \hline
+%			\end{tabularx}%
+%		}
+%	\end{table}
+%\end{funreq}
 
 	
-	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
-	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
-	\begin{funreq}
-		\label{card_buy}
-		TITLE: Buy items from the shopping cart\\
-		DESC: Proceed to checkout from the shopping cart and buy all items in the shopping cart or a portion of the items in the shopping cart\\
-		RAT: Allow user to buy items that have been placed in the shopping cart\\
-		DEP: None
-	\end{funreq}
-	
+%	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
+%	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+%	\begin{funreq}
+%		\label{cart_buy}
+%		TITLE: Buy items from the shopping cart\\
+%		DESC: Proceed to checkout from the shopping cart and buy all items in the shopping cart or a portion of the items in the shopping cart\\
+%		RAT: Allow user to buy items that have been placed in the shopping cart\\
+%		DEP: None
+%	\end{funreq}
+%*****************************************************************************************************************	
+%I think we have to do rework shopping cart/list
+%****************************************************
 	
 	\subsection{Employee}
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The employee feature allows the management of employees’ time cards and tasks. Managers will be able to assign different tasks such as delivery, gather online orders, etc.  In addition, managers should be able to view and edit employee scheduled work days.  The system should track and display information about employee hours worked and display it to managers.
+	The employee feature allows the management of employees’ time cards and tasks. Managers will be able to assign different tasks such as delivery, prepare online orders, etc.  In addition, managers should be able to view and edit employee scheduled work days.  The system should track and display information about employee hours worked and display it to managers.
 	
-	
-	\subsubsection{Stimulus/Response sequence}
-	Managers:
-	When users logged in as managers, they can assign tasks for employees daily.  The manager should be able to view statistics about hours worked
-	Employees:
-	When users logged in as managers, they are able to check-in/check-out on their time card. They will see the tasks assigned for them to be completed.
-	
+%	
+%	\subsubsection{Stimulus/Response sequence}
+%	Managers:
+%	When users logged in as managers, they can assign tasks for employees daily.  The manager should be able to view statistics about hours worked
+%	Employees:
+%	When users logged in as managers, they are able to check-in/check-out on their time card. They will see the tasks assigned for them to be completed.
+%	
 	\subsubsection{Associated functional requirements}
 	%\paragraph[]{\normalfont Managers must be able to assign work days to employees.}
 	%\paragraph[]{\normalfont Employees must be able to view their current assignments.}
@@ -887,28 +908,37 @@ On the Storefront homepage/category page: Listing of items available should be d
 		\label{employee_login}
 		TITLE: Employee login\\
 		DESC: All employees shall be able to log-in to the employee page.\\
-		RAT: So that employees view their schedules\\
+		RAT: So that the employees can view their schedules\\
 		DEP: None
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
-		\label{employee_addremove}
-		TITLE: Add or remove employees\\
-		DESC: Managers and admins shall be able to add or remove employees from the company.  \\
-		RAT: So that employees can know their position in the company\\
+		\label{employee_add}
+		TITLE: Add employee\\
+		DESC: Managers shall be able to add employee from the company.  \\
+		RAT:  So that the employee know their current working status within the company\\
 		DEP: None
 	\end{funreq}
+
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+\begin{funreq}
+	\label{employee_remove}
+	TITLE: Remove employee\\
+	DESC: Managers shall be able to remove employee from the company.  \\
+	RAT:  So that the employee know their current working status within the company\\
+	DEP: None
+\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_role}
 		TITLE: Employee role\\
-		DESC: Employees must have a role such as manager, owner, cashier, etc...  The employee role will dictate what features of the website to which the employee will have access.\\
-		RAT: So that managers can manage the company\\
-		DEP: \reqref{employee_addremove}
+		DESC: Employees shall have a role such as manager, owner, cashier, etc...  The employee role will dictate what privileges and features the employee have access.\\
+		RAT:  So that managers can manage the company\\
+		DEP: \reqref{employee_add}
 	\end{funreq}
 
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -916,7 +946,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\begin{funreq}
 		\label{employee_assign}
 		TITLE: Manager assign work days\\
-		DESC: Managers must be able to assign work days to employees.  The manager must be able to set which hours for every day of the week for each employee.\\
+		DESC: Managers shall be able to schedule work days to employees.  The manager must be able to set which hours for every day of the week for each employee.\\
 		RAT: So that employees can know which days to work\\
 		DEP: \reqref{employee_role}
 		
@@ -930,23 +960,23 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\resizebox{\textwidth}{!}{%
 				\begin{tabularx}{\columnwidth}{|l|X|}
 					\hline Description: &
-					    Managers must be able to assign work days to employees.  The manager must be able to set which hours for every day of the week for each employee.
+					    Managers shall be able to schedule work days to employees.  The manager must be able to set which hours for every day of the week for each employee.
 					\\ \hline Trigger: & 
-					Manager clicks on a user to assign hours in the work scheduler portion of the website                 
+					Manager clicks on an employee to assign hours in the work scheduler portion of the website                 
 					\\ \hline Preconditions & 
 					The employee exists and is able to be assigned work hours
 					\\ \hline Postconditions   & 
-					User has hours assigned for the next work week stored for their account
+					Employee has hours assigned for the next work week stored for their account
 					\\ \hline Normal Flow &
 					\bfseries{Manager assigns work hours}\normalfont\newline 
 					\begin{enumerate}
-    					\item Manager selects a user from a dropdown box
-    					\item Manager selects a week from a dropdown box
-    					\item The website presents a week view for each of the days of that week
-    					\item The manager selects a day from the week view
-    					\item The manager selects the start and stop time of the employees shift from a dropdown box
-    					\item The manager clicks "Save"
-    					\item The website stores the configuration to the employee's profile
+    					\item Manager shall select a user from a dropdown box
+    					\item Manager shall select a week from a dropdown box
+    					\item The website shall present a week view for each of the days of that week
+    					\item The manager shall select a day from the week view
+    					\item The manager shall select the start and stop time of the employees shift from a dropdown box
+    					\item The manager shall click "Save"
+    					\item The website shall store the configuration to the employee's profile
 					\end{enumerate}
 					\\ \hline Alternative Flow & 
 					None
@@ -964,8 +994,8 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_viewwork}
-		TITLE: Employee view assignments\\
-		DESC: Employees must have a page where they can view their assigned schedule for the week.  The schedule will show which days they will work and what hours they must work.\\
+		TITLE: Employee view assigned work shedule\\
+		DESC: Employees shall have a page where they can view their assigned schedule for the week.  The schedule will show which days they will work and what hours they must work.\\
 		RAT: So that employees can know which days to work\\
 		DEP: \reqref{employee_assign}
 	\end{funreq}
@@ -985,9 +1015,9 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsubsection{Introduction/Purpose of feature}
     This feature shall allow customers to select where they want to obtain their groceries once they have completed their purchase online, both in-store pickup and home delivery options will be available. The system shall assign an employee to prepare an online order once received by the system and will notify the delivery employee or customer when an online order is ready.
 
-	\subsubsection{Stimulus/Response sequence}
-	Delivery: If the user selects delivery during checkout, the system will check if the user has an address on file.  If the user does not have an address, the system will prompt them to add one.  After confirming the customer address and the customer completes a delivery order, an employee will be notified using the website about which groceries have to be collected from the store.  After the employee completes the grocery collection, a driver will be notified of where to pickup the groceries and the location to deliver the groceries.
-	Pickup: If the user selects pickup, the system will ask the customer what time they wish to pickup the groceries.  After the order is completed, an employee will be assigned to collect the groceries and place the completed order in a designated spot.  When the employee is notified that the customer is ready to pickup the order, the employee will bring the groceries to the customer.
+%	\subsubsection{Stimulus/Response sequence}
+%	Delivery: If the user selects delivery during checkout, the system will check if the user has an address on file.  If the user does not have an address, the system will prompt them to add one.  After confirming the customer address and the customer completes a delivery order, an employee will be notified using the website about which groceries have to be collected from the store.  After the employee completes the grocery collection, a driver will be notified of where to pickup the groceries and the location to deliver the groceries.
+%	Pickup: If the user selects pickup, the system will ask the customer what time they wish to pickup the groceries.  After the order is completed, an employee will be assigned to collect the groceries and place the completed order in a designated spot.  When the employee is notified that the customer is ready to pickup the order, the employee will bring the groceries to the customer.
 	\raggedbottom
 	\looseness=-1
 	
@@ -1003,17 +1033,17 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Delivery address validation}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
-				Created By    & Thoai M. & Date Created    & 03/23/2020 
+				Created By    & Thoai Mai & Date Created    & 03/23/2020 
 				\\ \hline
-				Primary Actor & Guest/Member user & Secondary Actor & Website 
+				Primary Actor & Customer & Secondary Actor & Website 
 				\\ \hline
 			\end{tabularx}
 			\resizebox{\textwidth}{!}{
 				\begin{tabularx}{\columnwidth}{|l|X|}
 					\hline Description: &
-				    The website shall check for user’s choice of delivery or in-store pickup for payment processed online order and validate for delivery address.
+				    The website shall check for customer’s choice of delivery or in-store pickup for payment processed online order and validate for delivery address.
 					\\ \hline Trigger: & 
-					User clicks on option “Place Order”               
+					Customer clicks on option “Place Order”               
 					\\ \hline Preconditions & 
 					Payment was successfully received
 					\\ \hline Postconditions   & 
@@ -1024,19 +1054,18 @@ On the Storefront homepage/category page: Listing of items available should be d
 					\\ \hline Normal Flow &
 					\bfseries{Delivery address validation}\normalfont\newline 
 					\begin{enumerate}
-					    \item System shall check for delivery address information if delivery option was selected by user
-					    \item If delivery address is missing, the website shall prompt user for delivery address and option to have online order as in-store pickup
-                        \item User fills in delivery address or select in-store pickup option
-                        \item User clicks the “Submit” option
+					    \item System shall check for delivery address information if delivery option was selected by customer
+					    \item If delivery address is missing, the website shall prompt customer for delivery address and option to have online order as in-store pickup
+                        \item Customer fills in delivery address or select in-store pickup option
+                        \item Customer clicks the “Submit” option
                         \item If delivery address found, the website shall add delivery address information to the complete online order
-                        \item If user picks in-store pickup, the website shall direct user to \reqref{grocery_pickupreceive} response sequence.
+                        \item If customer picks in-store pickup, the website shall direct customer to \reqref{grocery_pickupreceive} response sequence.
 					\end{enumerate}
 					\\ \hline Alternative Flow & 
 					None
 					\\ \hline Exceptions & Payment did not successfully validate
-					
-					
-                        User did not fill in delivery address information
+                        
+                        Customer did not fill in delivery address information
 					\\ \hline Priority & 
 					High
 					\\ \hline
@@ -1057,7 +1086,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Receive online order for delivery}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
-				Created By    & Thoai M. & Date Created    & 03/23/2020 
+				Created By    & Thoai Mai & Date Created    & 03/23/2020 
 				\\ \hline
 				Primary Actor & Employee & Secondary Actor & Website 
 				\\ \hline
@@ -1070,11 +1099,11 @@ On the Storefront homepage/category page: Listing of items available should be d
 					User clicks on option “Place Order”
 					
 					
-					User clicks on option “Submit” in \reqref{grocery_deliveryaddr}
+					Customer clicks on option “Submit” in \reqref{grocery_deliveryaddr}
 					\\ \hline Preconditions & 
 					Payment was successfully received
 					
-					Website obtains all required user’s information
+					Website obtains all required customer’s information
 					
 					Online order successfully processed
 
@@ -1113,33 +1142,33 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}User selects pickup time}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
-				Created By    & Thoai M. & Date Created    & 03/23/2020 
+				Created By    & Thoai Mai & Date Created    & 03/23/2020 
 				\\ \hline
-				Primary Actor & Member/Guest & Secondary Actor & Website 
+				Primary Actor & Customer & Secondary Actor & Website 
 				\\ \hline
 			\end{tabularx}
 			\resizebox{\textwidth}{!}{%
 				\begin{tabularx}{\columnwidth}{|l|X|}
 					\hline Description: &
-				    The website shall check for user’s choice of in-store pickup for payment processed online order and validate for pickup time.
+				    The website shall check for customer’s choice of in-store pickup for payment processed online order and validate for pickup time.
 					\\ \hline Trigger: & 
-					User clicks on option “Place Order”
+					Customer clicks on option “Place Order”
 					\\ \hline Preconditions & 
 					Payment was successfully processed
 					
-					Website obtains all required user’s information
+					Website obtains all required customer’s information
 					\\ \hline Postconditions   & 
-					Website obtains user’s desired in-store pickup time
+					Website obtains customer’s desired in-store pickup time
 					
 					Online order completes
 					\\ \hline Normal Flow &
 					\bfseries{User select pickup time}\normalfont\newline 
 					\begin{enumerate}
 					    \item The website shall check if the in-store pickup option is selected
-					    \item The website shall prompt for user desired time to pick up order
-                        \item User shall input desired time to pick up order and click “Submit”
+					    \item The website shall prompt for customer desired time to pick up order
+                        \item Customer shall input desired time to pick up order and click “Submit”
                         \item The website shall use input time to prioritize order to be collected in store by employee
-                        \item The website shall display a message to the user with estimated time when the order is ready for in-store pickup
+                        \item The website shall display a message to the customer with estimated time when the order is ready for in-store pickup
 					\end{enumerate}
 					\\ \hline Alternative Flow & 
 					None
@@ -1165,7 +1194,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Receive online order for in-store pickup}\end{flushleft}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
-				Created By    & Thoai M. & Date Created    & 03/23/2020 
+				Created By    & Thoai Mai & Date Created    & 03/23/2020 
 				\\ \hline
 				Primary Actor & Employee & Secondary Actor & Website 
 				\\ \hline
@@ -1173,17 +1202,17 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\resizebox{\textwidth}{!}{%
 				\begin{tabularx}{\columnwidth}{|l|X|}
 					\hline Description: &
-				    The website shall check for user’s choice of in-store pickup for payment processed online order and validate for pickup time.
+				    The website shall check for customer’s choice of in-store pickup for payment processed online order and validate for pickup time.
 					\\ \hline Trigger: & 
-					User clicks on option “Submit” in \reqref{grocery_pickuptime}
+					Customer clicks on option “Submit” in \reqref{grocery_pickuptime}
 					\\ \hline Preconditions & 
 					Payment was successfully received
 					
-					Website obtains all required user’s information
+					Website obtains all required customer’s information
 					
 					Online order successfully processed
 					\\ \hline Postconditions   & 
-					User receives order ready to be pickup in store notification
+					Customer receives order ready to be pickup in store notification
 					\\ \hline Normal Flow &
 					\bfseries{Receive online order for in-store pickup}\normalfont\newline 
 					\begin{enumerate}
@@ -1191,7 +1220,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 					    \item The website shall list the item(s) needed to be collected from the store
                         \item Employee completes item collection and package items for in-store pickup
                         \item Employee clicks “Order ready”
-                        \item The website shall notify user that their online order is ready for in-store pickup
+                        \item The website shall notify customer that their online order is ready for in-store pickup
 					\end{enumerate}
 					\\ \hline Alternative Flow & 
 					None
@@ -1217,17 +1246,17 @@ On the Storefront homepage/category page: Listing of items available should be d
 	System shall transmit user credentials in an encrypted form.  This will prevent attackers from easily viewing the customer's credentials as they are transmitted.  
 	
     \subsection{Mobile Useability}
-	The website shall be mobile friendly.
+	The website shall be mobile supported.
 
     \subsection{Website Useability}
     The website’s storefront shall use a legible font with a font size 12 pt or larger to promote consumer’s usabilities.
 
     \subsection{Payment Security}
-    The website shall protect consumer’s personal data, which shall provide the consumer peace of mind and trust when using the website.
+    The website shall protect consumer’s personal data.
 
 	\section{Performance Requirements}
 	\subsection{Inventory query response time}
-	When a query is made of the inventory database, the system should not take more than 500 milliseconds to respond.  This is to ensure that requests are handled quickly and the system does not become backlogged with requests.
+	When a query is made to the inventory database, the system should not take more than 500 milliseconds to respond.  This is to ensure that requests are handled quickly and the system does not become backlogged with requests.
 	
 	\subsection{Storepage Load Time}
 	The website storefront shall load swiftly; the website should not take longer than 5 seconds to load. The average loading speed for each page should be 3 seconds with high speed internet connection.
@@ -1237,7 +1266,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	The system shall use a machine with  3GHz Quad CPU, 8GB RAM, 800MB database space, and 10GB disk space for minimum operation and will be subject to increase depending on performance test and storage needs.
 
 	\subsection{API Integrations}
-	APIs from different sub-systems have been used to develop the grocery store these include APIs from  inventory management system, payment gateway, location tracking systems and other smaller systems. Any updates to these systems that changes the API Integration will need refactoring to resolve any issue.
+	APIs from different sub-systems have been used to develop the grocery store, these include APIs from  inventory management system, payment gateway, location tracking systems and other smaller systems. Any updates to these systems that changes the API Integration will need refactoring to resolve any issue.
 	
 	%\section{Security Requirements}
 	%$<$ Placeholder $>$
@@ -1505,14 +1534,14 @@ On the Storefront homepage/category page: Listing of items available should be d
 	%\section{Appendix B: Analysis Models}
 	%$<$ Placeholder $>$
 	\section{Appendix B: Diagrams}
-	Shopping Cart:\\
-	%\begin{figure}[p]
-	\includegraphics[width=6 in]{1.png}
-	%\caption{}
-	%\end{figure}
-	User Log-in:\\
-	%\begin{figure}[p]
-	\includegraphics[width=6 in]{2.png}
+%	Shopping Cart:\\
+%	%\begin{figure}[p]
+%	\includegraphics[width=6 in]{1.png}
+%	%\caption{}
+%	%\end{figure}
+%	User Log-in:\\
+%	%\begin{figure}[p]
+%	\includegraphics[width=6 in]{2.png}
 	%\caption{}
 	%\end{figure}
 	Employee Order Queue:\\
@@ -1520,6 +1549,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\includegraphics[width=6 in]{3.png}
 	%\caption{}
 	%\end{figure}
+	
 	Options to add item into cart or shopping list:\\
 	%\begin{figure}[p]
 	\includegraphics[width=6 in]{4.jpg}
