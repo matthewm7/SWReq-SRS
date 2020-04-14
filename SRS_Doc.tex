@@ -168,10 +168,11 @@
 
 \section{Purpose}
 %Need to reword, a little bit confusion
-This document provides detailed requirements about the product, Whole Knockoffs webpage, that our team is creating for our customer, the owners of Whole Knockoffs.  This document is intended for said customers and our software team as a reference on for the desired behaviors and requirements of the application.
+This document provides detailed requirements about the product, Whole Knockoffs webpage, that our team is creating for our customer, the owners of Whole Knockoffs.  This document is intended %for said customers and our software team
+as a reference for the desired behaviors and requirements of the application.
 
 \section{Scope}
-The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal customers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using the website storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The website also update items quanities counts to the WKGS's separate inventory system.
+The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal customers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using the website storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The website also update items quantities counts to the WKGS's separate inventory system.
 
 \section{Definitions, acronyms, and abbreviations}
 \textit{WKGS}: Whole Knockoff Grocery Store.\\
@@ -179,11 +180,17 @@ The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to al
 \textit{DESC}: Description - Explanation of the functional or non-functional requirement.\\
 \textit{RAT}: Requirements Authoring Tool - This line describes why the feature exists so that an automated tool can assist with classifying each requirement.\\
 \textit{DEP}: Dependencies - Other requirements that must work correctly for this requirement to work.\\
+\textit{User}: Any person who is using the WKGS system.\\
+\textit{Member}: Any person who has an account for purchasing groceries from WKGS.\\
+\textit{Guest}: Any person using the WKGS storefront who is not logged into an account.\\
+\textit{Customer}: This group includes both Members and Guests.\\
+\textit{Employee}: A person who is currently employed by WKGS.\\
 
 
 \section{References}
 %\unsure{Do we need this?}
-$<$ Placeholder $>$
+%$<$ Placeholder $>$
+There are no external references for this document.
 
 \section{Overview}
 In section 2, the product will be given an overall description.  Section 3 will describe in detail each of the features and their corresponding requirements.   
@@ -195,7 +202,10 @@ In section 2, the product will be given an overall description.  Section 3 will 
 The WKGS will provide customers and employees alike a web-based shopping and grocery store experience. Employees will be met with a delivery and pickup process/system that eliminates the need for coordination among activities and employees. Customers will benefit similarly from the seamless intersection between item selection and delivery, making their shopping experience the easiest part of every customer's day. 
 
 %Need to reword, I don't understand the first part of this
-Customers are will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. All items, whether purchased through the web protal or in-store, will be communicated to the WKGS's inventory system.
+%Customers will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. All items, whether purchased through the web portal or in-store, will be communicated to the WKGS's inventory system.
+
+%This might be better
+Customers will be met with an item selection interface from the web page.  The item interface will display the item's name, description, and price.  Customers can add items that are in stock to a virtual shopping cart that will maintain a list of items that the customer wishes to purchase.  The website will also feature a shopping list.  The shopping list is similar to the shopping cart in that it maintains a list of items that the customer added.  However, a shopping list cannot be directly purchased and maintains a list of items separate from the shopping cart.  The customer can purchase items in their shopping cart through an online payment system.  Groceries can then be obtained through a delivery system or by picking the groceries up from a WKGS location.  All purchases made through the website update the grocery store's inventory system.
 
 
 \section{Product Perspective}
@@ -226,7 +236,7 @@ The system is expected to interface with the store's existing inventory system a
 %\info[inline]{This subsection of the SRS should describe those general characteristics of the intended users of the product including  educational  level,  experience,  and  technical  expertise.  It  should  not  be  used  to  state  specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.}
 
 %$<$ 
-There are two main user classes, customers and employees. These two classes are broken down into paths for customers and roles for employees. Customer paths will involve member and guest checkout, will feature shopping cart/list functionality and will allow the customer to choose much of the shopping process from the site. Employee roles will guard the employees through their in-store duties and through their duties that come directly from the web page. %$>$
+There are two main user classes, customers and employees. These two classes are broken down into paths for customers and roles for employees. Customer paths will involve member and guest checkout, will feature shopping cart/list functionality and will allow the customer to choose much of the shopping process from the site. Employee roles will guide the employees through their in-store duties and through their duties that come directly from the web page. %$>$
 
 \section{Constraints}
 %\info[inline]{This subsection of the SRS should provide a general description of any other items that will limit the developer’s options. These include\\\bigskip
@@ -247,7 +257,7 @@ There are several constraints to the system, none of these constraints focus aro
 \section{Assumptions and Dependencies}
 %\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
 %$<$ 
-Several future dependencies could change the requirements for the \textit{WKGS} purchasing/employee website. Integration with other shopping applications could alter the amount of information displayed by the website and how the website handles user paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{WKGS} will offer to their customers. User login and checkout will not necessary store user information and will not mandate account creation to checkout using the online system. %$>$
+Several future dependencies could change the requirements for the \textit{WKGS} purchasing/employee website. Integration with other shopping applications could alter the amount of information displayed by the website and how the website handles customer paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{WKGS} will offer to their customers. Member login and checkout will not necessary store customer information and will not mandate account creation to checkout using the online system. %$>$
 %Who are user? If can't use different term, need to add user into Definition
 
 
@@ -331,10 +341,10 @@ If the customer selects pickup to obtain their groceries, they will see an inter
 
 \subsection{Hardware Interfaces}
 %The application will have to interface with several hardware components for both employee and customer needs. The application will need to provide, potentially, scanning/item additions for customers and will certainly need to allow employees to scan products for both checkout and inventory stocking. Employees will be given scanners for item inventory that will look for information from the website for inventory counts and relay this information for stocking, this will need to be relayed to the online checkout portions of the website so that customers have access to the most up-to-date item inventory status.
-Because the customer is responsible for the hardware and the inventory system, this application will not directly interface with hardware components. 
+Because the WKGS is responsible for the hardware and the inventory system, this application will not directly interface with hardware components. 
 
 \subsection{Software Interfaces}
-The website must communicate with the inventory system for tracking and maintaining accurate inventory counts.  Using the existing customer's inventory API, the web site will communicate with the inventory system to obtain item quantities and item prices.  The web site will also deduct item quantities once purchases are complete. 
+The website must communicate with the inventory system for tracking and maintaining accurate inventory counts.  Using the existing WKGS inventory API, the web site will communicate with the inventory system to obtain item quantities and item prices.  The web site will also deduct item quantities once purchases are complete. 
 %The web page must communicate with GPS applications for delivery locations in addition to other customer devices for pickup/delivery purposes. Potentially the web page must also be able to interface with third party application which we will discuss further in Section 2 above. All/most employee activities will be performed with technology that communicates with the web page for timekeeping, customer checkout, item inventory, delivery, and other various activities in the store; all activities/technologies will run potentially independent software that must interface with website.
 
 
@@ -346,31 +356,10 @@ The website must communicate with the inventory system for tracking and maintain
 %----------------------------
 
 
-\subsection{Online checkout}
-	%\chapter*{Revision History}
-	%
-	%\begin{center}
-	%    \begin{tabular}{|c|c|c|c|}
-	%        \hline
-	%	    Name & Date & Reason For Changes & Version\\
-	%        \hline
-	%	    21 & 22 & 23 & 24\\
-	%        \hline
-	%	    31 & 32 & 33 & 34\\
-	%        \hline
-	%    \end{tabular}
-	%\end{center}
-
-	%----------------------------
-	
-	
-%	\subsection{Online checkout}
-	
-	
-	
+\subsection{Online checkout}	
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The checkout feature allows users to pay for their item(s) currently in the Shopping list to complete their order. Depending on type of customers, the feature should preload required customer’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the customers can specify payment and delivery options on the checkout page. 
+	The checkout feature allows customers to pay for their item(s) currently in the Shopping list to complete their order. If the user is a logged in member, the feature should preload the customer’s information for the checkout process including: home address for delivery, billing address, and payment method. Furthermore, the customers can specify payment and delivery options on the checkout page. 
 	
 %	\subsubsection{Stimulus/Response sequence}
 %	Existing users/members:
@@ -389,7 +378,7 @@ The website must communicate with the inventory system for tracking and maintain
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{online_checkout}
-		TITLE: Allow everyone to checkout online\\
+		TITLE: Allow customers to checkout online\\
 		DESC: The checkout feature should allow all customers to pay for their item(s) currently in the Shopping list to complete their order. Depending on type of customers, the feature should preload and/or request required customer’s information for the checkout process including home address for delivery, billing address, and payment method. Furthermore, the customer can specify payment and delivery options on the checkout page.\\
 		RAT: In order for all users to pay for their online order.\\
 		DEP: None\\
@@ -504,7 +493,7 @@ The website must communicate with the inventory system for tracking and maintain
 	\subsection{Account Management System}
 %\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
-This feature allows customers to create and edit settings for grocery store accounts.  New customer will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing customer (member) a convenient way to edit their password, change delivery addresses, manage stored payment information, and change other stored personal information.  From the customer management profile, customers will also be able to see past purchases and orders.
+This feature allows customers to create and edit settings for grocery store accounts.  New customers will use this feature to populate basic account information while setting up their account such as username and password.  In addition, this feature allows existing members a convenient way to edit their password, change delivery addresses, manage stored payment information, and change other stored personal information.  From the member management profile, members will also be able to see past purchases and orders.
 
 %\subsubsection{Stimulus/Response sequence}
 %\indent New users: When the “sign up” button is pressed, the system will direct the user to select a username and password to create their account.  After the user fills appropriate values into these fields, the user will be able to sign in using the credentials selected.
@@ -517,9 +506,9 @@ This feature allows customers to create and edit settings for grocery store acco
 \begin{funreq}
 	
 	\label{account_create}
-	TITLE: Create a new customer account\\
+	TITLE: Create a new member account\\
 	DESC: A customer should be able to register through the website. The customer must provide username, password and e-mail address. \\
-	RAT: In order for a customer to register an account\\
+	RAT: In order for a customer to register an account and become a user\\
 	DEP: None\\
 	
 	\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Create a new member account}
@@ -541,15 +530,16 @@ This feature allows customers to create and edit settings for grocery store acco
 				A customer should be able to register through the website. The customer must provide a name, username, password and e-mail address. \\ \hline
 				Trigger:         & Customer clicks on "Register" option                    \\ \hline
 				Preconditions    & None                                       \\ \hline
-				Postconditions   & Account is created, Customer is Logged in      \\ \hline
+				Postconditions   & Account is created, member is Logged in      \\ \hline
 				Normal Flow &
 				\bfseries{Create a new Member account}\normalfont\newline 
 				\begin{enumerate}
-					\item Customer Clicks on Register Enters name, user-name, password and e-mail address.
+				\item Customer Clicks on "Register".
+			 	\item Customer enters name, user-name, password, and e-mail address.
 				%Needs clarify****************************************
-				\item Website confirms it is a unique entry and save the new member details
-				\item Website Informs customer of successful creation
-				\item Website Logs customer in 
+				\item Website confirms it is a unique entry and saves the new member details.
+				\item Website informs customer of successful creation.
+				\item Website logs the member in.
 				\end{enumerate}
 				\\ \hline
 				Alternative Flow & None                                       \\ \hline
@@ -566,7 +556,7 @@ This feature allows customers to create and edit settings for grocery store acco
 	\label{account_createstaff}
 	TITLE: Create a new Staff account\\
 	DESC: An administrator should assign staff roles and permissions and an internal company email address\\
-	RAT: In order for a user/staff to register an account\\
+	RAT: In order for an employee to register an account\\
 	DEP: None\\
 \end{funreq}
 
@@ -575,8 +565,8 @@ This feature allows customers to create and edit settings for grocery store acco
 \begin{funreq}
 	\label{account_login}
 	TITLE: Login into Account\\
-	DESC: Given that a user/staff has created an account, then the user should be able to log in to his/her account.\\
-	RAT: In order to identify a user to shop online and use website/store’s features or for staff to access admin platform\\
+	DESC: Given that an employee has created an account, then the employee should be able to log in to his/her account.\\
+	RAT: In order to identify an employee to shop online and use website/store’s features or for staff to access admin platform\\
 	DEP: \reqref{account_create}
 \end{funreq}
 %\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
@@ -589,13 +579,14 @@ This feature allows customers to create and edit settings for grocery store acco
 	This section details what features of the how the website shall communicate with the inventory system.  This shall includes when specific features of the inventory system will be queried and accessed.  
 	%The inventory stores information about the type, quantity, price and price of all the items that the grocery store stocks. The inventory feature allows different privileges to manage the store items according to the type of users. This feature will create items summary purchased by day, month and year. The user can assign what items to be on-sale. The feature updates item inventory after each completed consumer purchase.
 	
-	\subsubsection{Stimulus/Response sequence}
-	Web site: request quantity for item number\\
-	Inventory: return item number and quantity in stock\\
-	Website: request price for item number\\
-	Inventory: return item number and price\\
-	Web site: submit item number and quantity purchased\\
-	Inventory: decrement item quantity for specified items\\
+%	\subsubsection{Stimulus/Response sequence}
+%	Web site: request quantity for item number\\
+%	Inventory: return item number and quantity in stock\\
+%	Website: request price for item number\\
+%	Inventory: return item number and price\\
+%	Web site: submit item number and quantity purchased\\
+%	Inventory: decrement item quantity for specified items\\
+	
 	%Inventory manager: Following options are available to an inventory manager \\
 	%User: add/remove/update items from store inventory, assign items to be on-sale, can sort the items by date of purchased.\\
 	%Existing users/members/guests:  The users can only view the availability of store items on the store website.\\
@@ -704,12 +695,12 @@ This feature allows customers to create and edit settings for grocery store acco
 
 
 
-	\subsection{Storefront System}
+\subsection{Storefront System}
 %\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
 This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description.  From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart.  Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types.  In addition, a search is available for customers to locate a specific item quickly.
-\subsubsection{Stimulus/Response sequence}
-On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
+%\subsubsection{Stimulus/Response sequence}
+%On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
 \subsubsection{Associated functional requirements}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -717,7 +708,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 \begin{funreq}
 	\label{store_home}
 	TITLE: Storefront homepage\\
-	DESC: When the user enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user.\\
+	DESC: When the customer enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user and listings of items that WKGS wishes to feature.\\
 	RAT: So that a customer can navigate the website.\\
 	DEP: None\\
 \end{funreq}
@@ -750,17 +741,21 @@ On the Storefront homepage/category page: Listing of items available should be d
 			\begin{tabularx}{\columnwidth}{|l|X|}
 				\hline
 				Description: &
-				A user should be able to register through the website. The user must provide a name, username, password and e-mail address. \\ \hline
-				Trigger:         & Customer selects category to filter by         \\ \hline
-				Preconditions    & Items have category specified in the inventory             \\ \hline
-				Postconditions   & The storefront displays only items that have the listed category    \\ \hline
+				A customer should be able to select a category on the website to filter the item type displayed. \\ \hline
+				Trigger:         & A customer selects a category filter         \\ \hline
+				Preconditions    & Items have a category specified             \\ \hline
+				Postconditions   & The storefront displays only items that have the specified category    \\ \hline
 				Normal Flow &
 				\begin{enumerate}
 				\item The customer selects a store category from the homepage of the website
 				\item The website shall update the list of displayed items with the selected category
 				\end{enumerate}
 				\\ \hline
-				Alternative Flow & None                                       \\ \hline
+				Alternative Flow & 
+				\begin{enumerate}
+				\item The customer selects an item from the homepage
+				\end{enumerate}
+				\\ \hline
 				Exceptions       & No items with the selected category exist \\ \hline
 				Priority         & High                                       \\ \hline
 			\end{tabularx}%
@@ -798,6 +793,16 @@ On the Storefront homepage/category page: Listing of items available should be d
 	DEP: \reqref{account_login}\\
 \end{funreq}
 
+\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+\begin{funreq}
+	\label{store_detailscart}
+	TITLE: Display add quantity to cart\\
+	DESC: On the item details page, the customer shall be presented with an quantity selector which will be added to the cart when the "Add to cart" button is pressed.\\
+	RAT: So that a customer can purchase items\\
+	DEP: \reqref{cart_add}, \reqref{store_details}\\
+\end{funreq}
+
+
 %\paragraph[]{\normalfont The storefront must show which items are instock based on inventory values}
 %\paragraph[]{\normalfont The storefront must display items by the currently selected category.}
 %\paragraph[]{\normalfont Customers must be able to select a quantity to add to cart from the item description page.}
@@ -806,14 +811,14 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsection{Shopping cart/list}
 	%\improvement[inline]{\newline This section is incomplete}
 	\subsubsection{Introduction/Purpose of feature}
-	The shopping cart/list feature allows the user to manage their selected store item(s). The feature includes information on item's price, availability, and location in the store. In addition, the user can change the quantity of item(s) to be purchased or remove item(s) from the shopping cart/list.
+	The shopping cart/list feature allows the customer to manage their selected store item(s). The feature includes information on item's price, availability, and location in the store. In addition, the customer can change the quantity of item(s) to be purchased or remove item(s) from the shopping cart/list.
 	
-	\subsubsection{Stimulus/Response sequence}
-	Existing users/members/guest:
-	The users can edit item’s quantity and remove item from shopping list/cart. When the users are satisfied with their selected items, they can click the “Checkout” option to begin the checkout process. 
-	
-	Existing users/members:
-	The users are allowed to save shopping lists to their account.
+%	\subsubsection{Stimulus/Response sequence}
+%	Existing users/members/guest:
+%	The customer can edit item’s quantity and remove item from shopping list/cart. When the users are satisfied with their selected items, they can click the “Checkout” option to begin the checkout process. 
+%	
+%	Existing members:
+%	The users are allowed to save shopping lists to their account.
 	
 %	\paragraph[]{\normalfont Required web page(s) for shopping list/cart.}
 	
@@ -885,6 +890,59 @@ On the Storefront homepage/category page: Listing of items available should be d
 %*****************************************************************************************************************	
 %I think we have to do rework shopping cart/list
 %****************************************************
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}
+		\label{cart_persist}
+		TITLE: Cart/list persistence\\
+		DESC: Each customer shall have a persistent record of which items are currently in their cart and shopping list.\\
+		RAT: Allow customers to track which items they wish to purchase.\\
+		DEP: None
+	\end{funreq}
+	
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}
+		\label{cart_add}
+		TITLE: Add items to cart\\
+		DESC: When the customer selects an "Add to cart" option, the cart shall display the item name, quantity, and price in the cart.\\
+		RAT: Allow customers and guests to track which items they wish to purchase.\\
+		DEP: None
+	\end{funreq}
+
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+\begin{funreq}
+	\label{list_add}
+	TITLE: Add items to list\\
+	DESC: When the customer selects an "Add to shopping list" option, the shopping list shall display the item name, quantity, and price in the cart.\\
+	RAT: Allow customers to track which items they wish to purchase in store.\\
+	DEP: None
+\end{funreq}
+
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}
+		\label{cart_remove}
+		TITLE: Remove items to cart/list\\
+		DESC: When the customer selects the "remove" option, the item shall be removed from the cart/shopping list.\\
+		RAT: Allow customers to track which items they wish to purchase.\\
+		DEP: None
+	\end{funreq}
+
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}
+		\label{cart_changequantity}
+		TITLE: Change item quantity in cart/list\\
+		DESC: The customer shall be able to change the quantity of each item in the cart/list.\\
+		RAT: Allow customers to track which items they wish to purchase.\\
+		DEP: None
+	\end{funreq}
+	
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}
+		\label{cart_buy}
+		TITLE: Buy items from the shopping cart\\
+		DESC: When the customer clicks on the "Proceed to checkout" option in the cart interface, the customer shall be brought to the online checkout system.\\
+		RAT: Allow customers to track which items they wish to purchase\\
+		DEP: \reqref{online_checkout}
+	\end{funreq}
 	
 	\subsection{Employee}
 	%\improvement[inline]{\newline This section is incomplete}
@@ -954,7 +1012,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 		\begin{table}[H]
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
-				Created By    & Matthew M. & Date Created    & 03/123/2020 \\ \hline
+				Created By    & Matthew Moore & Date Created    & 03/123/2020 \\ \hline
 				Primary Actor & Manager(user)       & Secondary Actor & Website \\ \hline
 			\end{tabularx}
 			\resizebox{\textwidth}{!}{%
@@ -994,7 +1052,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_viewwork}
-		TITLE: Employee view assigned work shedule\\
+		TITLE: Employee view assigned work schedule\\
 		DESC: Employees shall have a page where they can view their assigned schedule for the week.  The schedule will show which days they will work and what hours they must work.\\
 		RAT: So that employees can know which days to work\\
 		DEP: \reqref{employee_assign}
@@ -1055,7 +1113,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 					\bfseries{Delivery address validation}\normalfont\newline 
 					\begin{enumerate}
 					    \item System shall check for delivery address information if delivery option was selected by customer
-					    \item If delivery address is missing, the website shall prompt customer for delivery address and option to have online order as in-store pickup
+					    \item If delivery address is missing, the website shall prompt customer for their delivery address and option to have online order as in-store pickup
                         \item Customer fills in delivery address or select in-store pickup option
                         \item Customer clicks the “Submit” option
                         \item If delivery address found, the website shall add delivery address information to the complete online order
@@ -1245,14 +1303,14 @@ On the Storefront homepage/category page: Listing of items available should be d
 	\subsection{Login Security}
 	System shall transmit user credentials in an encrypted form.  This will prevent attackers from easily viewing the customer's credentials as they are transmitted.  
 	
-    \subsection{Mobile Useability}
+    \subsection{Mobile Usability}
 	The website shall be mobile supported.
 
-    \subsection{Website Useability}
+    \subsection{Website Usability}
     The website’s storefront shall use a legible font with a font size 12 pt or larger to promote consumer’s usabilities.
 
     \subsection{Payment Security}
-    The website shall protect consumer’s personal data.
+    The website shall protect customer’s personal data.
 
 	\section{Performance Requirements}
 	\subsection{Inventory query response time}
@@ -1556,7 +1614,7 @@ On the Storefront homepage/category page: Listing of items available should be d
 	%\caption{}
 	%\end{figure}
 	
-	\section{Appendix C: }%To Be Determined List}
-	$<$ Placeholder $>$
+%	\section{Appendix C: }%To Be Determined List}
+%	$<$ Placeholder $>$
 	
 \end{document}
