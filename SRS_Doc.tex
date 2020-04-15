@@ -168,11 +168,10 @@
 
 \section{Purpose}
 %Need to reword, a little bit confusion
-This document provides detailed requirements about the product, Whole Knockoffs webpage, that our team is creating for our customer, the owners of Whole Knockoffs.  This document is intended %for said customers and our software team
-as a reference for the desired behaviors and requirements of the application.
+This document provides detailed requirements about the product, Whole Knockoffs' webpage, that our team has been tasked with creating for the owner/s of Whole Knockoffs.  This document is intended as a reference for the desired behaviors and requirements of the application.
 
 \section{Scope}
-The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal customers.  The WKGS website will allow customers to quickly see what is available to purchase at the grocery store using the website storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart, the customer can select if they would like the groceries delivered or available for in-store pickup.  The customer can then purchase these groceries through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and hours worked can be tracked.  The website also update items quantities counts to the WKGS's separate inventory system.
+The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to allow the Whole Knockoff grocery store to manage employees, track inventory, sell groceries online (using both delivery and in-store pickup), and give discounts to loyal customers.  The WKGS website will allow customers to quickly see what is available for purchase at the grocery store using the website storefront.  The customer can select items that they wish to purchase for delivery or in-store pickup.  After adding groceries to their virtual shopping cart customers can select if they would like their groceries delivered or made available for in-store pickup.  The customer can then finalize their purchase through the online portal.  The website will also act as an employee hub where employees can be assigned work schedules and track the hours they have worked. The website will also be responsible for updating items quantities counts to the WKGS's separate inventory system.
 
 \section{Definitions, acronyms, and abbreviations}
 \textit{WKGS}: Whole Knockoff Grocery Store.\\
@@ -190,10 +189,10 @@ The Whole Knockoff Grocery Store (WKGS) program is intended to be a system to al
 \section{References}
 %\unsure{Do we need this?}
 %$<$ Placeholder $>$
-There are no external references for this document.
+At this time there are no external references for this document.
 
 \section{Overview}
-The rest of this document includes the overall description of the project, the specific project requirements and appendixes. The overall description section presents a high-level summary of the project containing summaries for the product perspective and functions, user classes and characteristics then finally the constraints, assumptions and dependencies the Whole Knockoffs Grocery Store. The next part, the specific requirements provides the detailed requirements of the Grocery Store project from with subsections external interface requirements, system features, non- functional requirement, performance requirements, design constraints, and software quality attributes. This SRS document is organized by feature where the key features of the grocery store can be found in the system features subsection where each feature is described, using dependencies and use case tables where they apply. The final part of this document is the Appendixes where the user stories and mockup diagrams that are used in designing key aspects of this document are stored.
+The remainder of this document explains the overall description of the project, the specific project requirements and appendixes. The overall description section presents a high-level summary of the project containing summaries for the product perspective and functions, user classes and characteristics and finally the constraints, assumptions and dependencies of Whole Knockoffs Grocery Store. The specific requirements provide detailed requirements of the Grocery Store project from with subsections external interface requirements, system features, non-functional requirements, performance requirements, design constraints, and software quality attributes. SRS documentation is organized by feature, where the key features of the grocery store can be found in the system features subsection where each feature is described using dependencies and use case tables when appropriate. The Appendix contains user stories and mockup diagrams displayed to highlight key aspects of the document.
 
 {\let\clearpage\relax 
 \chapter{Overall Description}}
@@ -204,7 +203,7 @@ The WKGS will provide customers and employees alike a web-based shopping and gro
 %Customers will be met with an item selection interface from the web page. Coupling a simple item selection interface with shopping cart and wish list capabilities our customer's customers will find the process from shopping list to checkout convenient and simplistic. All items, whether purchased through the web portal or in-store, will be communicated to the WKGS's inventory system.
 
 %This might be better
-Customers will be met with an item selection interface from the web page.  The item interface will display the item's name, description, and price.  Customers can add items that are in stock to a virtual shopping cart that will maintain a list of items that the customer wishes to purchase.  The website will also feature a shopping list.  The shopping list is similar to the shopping cart in that it maintains a list of items that the customer added.  However, a shopping list cannot be directly purchased and maintains a list of items separate from the shopping cart.  The customer can purchase items in their shopping cart through an online payment system.  Groceries can then be obtained through a delivery system or by picking the groceries up from a WKGS location.  All purchases made through the website update the grocery store's inventory system.  Figure \ref{customer_diag} shows the systems that the customer will interact with.
+Customers will be met with an item selection interface from the web page.  The item interface will display the item's name, description, and price.  Customers can add items that are in stock to a virtual shopping cart that will maintain a list of items that the customer wishes to purchase.  The website will also feature a shopping list.  Shopping lists are similar to the shopping cart in that they maintain a list of items the customer has added.  However, a shopping list cannot be directly purchased and maintains a list of items separate from the shopping cart.  The customer can purchase items in their shopping cart through an online payment system.  Groceries can then be obtained through a delivery system or by picking the groceries up from a WKGS location.  All purchases made through the website update the grocery store's inventory system.  Figure \ref{customer_diag} shows the systems that the customer will interact with.
 
 \begin{figure}[H]
 	\begin{center}
@@ -225,7 +224,7 @@ Customers will be met with an item selection interface from the web page.  The i
 %	\indent g)Operations;\\
 %	\indent h)Site adaptation requirements.}
 %$<$ 
-The system is expected to interface with the store's existing inventory system as defined by the customer. The employee interface and customer facing portion of the web page will be separate but interface together on the same application. Although the web page is standalone and will not or is not currently expected to be able to manage the needs of multiple stores but may be a necessary requirement for the future of the Whole Knockoffs brand expansion. %$>$
+The system is expected to interface with the store's existing inventory system as defined by the customer. The employee interface and customer facing portion of the web page will be separate but interface together on the same application. Although the web page is standalone and will not, or is not, currently expected to be capable of managing the needs of multiple stores. This may be a future requirement for Whole Knockoffs brand expansion. %$>$
 
 \section{Product Functions}
 %\info[inline]{This subsection of the SRS should provide a summary of the major functions that the software will perform.For example, an SRS for an accounting program may use this part to address customer account maintenance,customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.  Sometimes the function summary that is necessary for this part can be taken directly from the section of the higher-level specification (if one exists) that allocates particular functions to the software product. Note that for the sake of clarity\\\bigskip
@@ -258,12 +257,12 @@ There are two main user classes, customers and employees. These two classes are 
 %j)Criticality of the application;\\
 %k)Safety and security considerations.\\}
 %$<$ 
-There are several constraints to the system, none of these constraints focus around integration/s of other systems or regulatory policies so far as the development team knows at this time. Reliability requirements could be a major concern for the web page during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for either the employee/shopping portions of the site. %$>$
+There are several constraints to the system, none of these constraints focus around integration/s of other systems or regulatory policies as far as the development team knows at this time. Reliability requirements could be a major concern for the web page during periods of high traffic to the site and during times of low availability for certain products. Additional logging and/or auditing capabilities may be required for legitimizing transactions on the site, but these requirements have not yet been mentioned by the customer for either the employee/shopping portions of the site. %$>$
 
 \section{Assumptions and Dependencies}
 %\info[inline]{This  subsection  of  the  SRS  should  list  each  of  the  factors  that  affect  the  requirements  stated  in  the  SRS.These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not avail-able, the SRS would then have to change accordingly. }
 %$<$ 
-Several future dependencies could change the requirements for the \textit{WKGS} purchasing/employee website. Integration with other shopping applications could alter the amount of information displayed by the website and how the website handles customer paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that \textit{WKGS} will offer to their customers. Member login and checkout will not necessary store customer information and will not mandate account creation to checkout using the online system. %$>$
+Several future dependencies can change the requirements for the WKGS purchasing/employee website. Integration with other shopping applications could alter information displayed by the website and how the website handles customer paths during their shopping experience. There are few user dependencies for the system given the online/in-person shopping alternatives that WKGS will offer to their customers. Member login is not necessary for customers who choose online checkout, the website will not mandate account creation to checkout using the online system. %$>$
 %Who are user? If can't use different term, need to add user into Definition
 
 
@@ -274,7 +273,7 @@ Several future dependencies could change the requirements for the \textit{WKGS} 
 
 \subsection{User Interfaces}
 
-When a customer first visits the \textit{WKGS} website, the user will initially see a page similar to Figure \ref{homepage}.  This page will show the customer deals that the store wants to promote.  When the customer clicks on an item box, an item details page similar to the one in Figure \ref{item_page} should be shown. From this page, the user can view details about the item, view images of the item, and add the desired quantity to the shopping cart.
+When a customer first visits the \textit{WKGS} website, the user will initially see a page similar to Figure \ref{homepage}. This page will show the customer deals that the store wants to promote. When the customer clicks on an item box, an item details page similar to the one in Figure \ref{item_page} should be shown. From this page, the user can view details about the item, view images of the item, and add the desired quantity to the shopping cart.
 \begin{figure}[H]
 	\mbox{
 		\begin{minipage}{0.45\textwidth}
@@ -708,18 +707,11 @@ This feature allows customers to create and edit settings for grocery store acco
 	%\paragraph[]{\normalfont Privileges will be assigned depending on the user.}
 	%\paragraph[]{\normalfont Website API for store manager.}
 	
-
-
-
-
-
-
-
-
+	
 \subsection{Storefront System}
 %\improvement[inline]{\newline This section is incomplete}
 \subsubsection{Introduction/Purpose of feature}
-This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description.  From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart.  Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types.  In addition, a search is available for customers to locate a specific item quickly.
+This feature allows customers on the website to see which items the grocery store has available to purchase as well as the item price and description. From the digital storefront, customers can also add different quantities of products to their shopping list and shopping cart. Products sold by the grocery store are divided into different categories to allow customers to easily browse items of specific types. In addition, a search is available for customers to locate a specific item quickly.
 %\subsubsection{Stimulus/Response sequence}
 %On the Storefront homepage/category page: Listing of items available should be displayed for the selected category/ area of the website (e.g. promotions on the homepage and fruit while in the produce category).  When a specific item is selected on the page, the customer is brought to that item’s description page.  From the description page, a quantity of that item can be selected to add to the shopping cart.  
 \subsubsection{Associated functional requirements}
@@ -729,7 +721,7 @@ This feature allows customers on the website to see which items the grocery stor
 \begin{funreq}
 	\label{store_home}
 	TITLE: Storefront homepage\\
-	DESC: When the customer enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user and listings of items that WKGS wishes to feature.\\
+	DESC: When the customer enters the website URL, they shall be brought to a homepage. The homepage shall contain navigation buttons for the user and listings of items that WKGS wishes to feature.\\
 	RAT: So that a customer can navigate the website.\\
 	DEP: None\\
 	PRIORITY: High\\
@@ -851,7 +843,7 @@ This feature allows customers on the website to see which items the grocery stor
 	\subsubsection{Associated functional requirements}
 	
 %****************************************************************************************************************
-%Not sure what is this requirement doing, ALL customers can add items into cart. Add item into shopping cart is simple and I don't think it reuqires this table format
+%Not sure what is this requirement doing, ALL customers can add items into cart. Add item into shopping cart is simple and I don't think it requires this table format
 %****************************************************************************************************************	
 %%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
 %\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -916,6 +908,7 @@ This feature allows customers on the website to see which items the grocery stor
 %*****************************************************************************************************************	
 %I think we have to do rework shopping cart/list
 %****************************************************
+
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_persist}
@@ -1075,7 +1068,7 @@ This feature allows customers on the website to see which items the grocery stor
 					\\ \hline Alternative Flow & 
 					None
 					\\ \hline Exceptions & 
-					Employee is already working in the selected timeframe
+					Employee is already working in the selected time frame
 					\\ \hline Priority & 
 					Low
 					\\ \hline
@@ -1345,7 +1338,7 @@ This feature allows customers on the website to see which items the grocery stor
 	The website shall be mobile supported.
 
     \subsection{Website Usability}
-    The website’s storefront shall use a legible font with a font size 12 pt or larger to promote consumer’s usabilities.
+    The website storefront shall use a legible font with font size 12pt or larger to promote increased consumer usability.
 
     \subsection{Payment Security}
     The website shall protect customer’s personal data.
