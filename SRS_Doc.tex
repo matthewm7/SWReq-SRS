@@ -1,4 +1,4 @@
- S%Copyright 2014 Jean-Philippe Eisenbarth
+%Copyright 2014 Jean-Philippe Eisenbarth
 %This program is free software: you can 
 %redistribute it and/or modify it under the terms of the GNU General Public 
 %License as published by the Free Software Foundation, either version 3 of the 
@@ -336,6 +336,8 @@ If the customer selects pickup to obtain their groceries, they will see an inter
 	}
 \end{figure}
 
+Other user mockup interface diagrams can be found in Appendix B.
+
 %$<$Placeholder for more user interface$>$
 
 \subsection{Hardware Interfaces}
@@ -381,10 +383,14 @@ The website must communicate with the inventory system for tracking and maintain
 		DESC: The checkout feature should allow all customers to pay for their item(s) currently in the Shopping list to complete their order. Depending on type of customers, the feature should preload and/or request required customer’s information for the checkout process including home address for delivery, billing address, and payment method. Furthermore, the customer can specify payment and delivery options on the checkout page.\\
 		RAT: In order for all users to pay for their online order.\\
 		DEP: None\\
-		
+		PRIORITY: High\\
+		\end{funreq}
 		%\clearpage
+		\goodbreak
+			\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+		\begin{funreq}~
 		\begin{table}[H]
-			\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Allow everyone to checkout online}\end{flushleft}
+			%\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Allow everyone to checkout online}\end{flushleft}
 			%\begin{adjustbox}{width=\textwidth}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
 				\hline
@@ -411,7 +417,7 @@ The website must communicate with the inventory system for tracking and maintain
 					\begin{enumerate}
 					\item Guest customer selects checkout option
 					
-					\item Website checks for type of customer \textit{Note: prompt for account login? Direct for different req path?}
+					\item Website checks for type of customer %\textit{Note: prompt for account login? Direct for different req path?}
 					
 					\item Website established guest customer
 					
@@ -436,7 +442,11 @@ The website must communicate with the inventory system for tracking and maintain
 				\end{tabularx}%
 			}
 		\end{table}
+	\end{funreq}
 		%\clearpage
+				%\end{table}
+				\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\begin{funreq}~
 		\begin{table}[H]
 			%\begin{adjustbox}{width=\textwidth}
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
@@ -445,8 +455,8 @@ The website must communicate with the inventory system for tracking and maintain
 				Primary Actor & Member Customer        & Secondary Actor & Website \\ \hline
 			\end{tabularx}
 			%\end{adjustbox}
-		%\end{table}
-		
+
+
 		%\begin{table}[h!]
 			\resizebox{\textwidth}{!}{%
 				\begin{tabularx}{\columnwidth}{|l|X|}
@@ -471,7 +481,7 @@ The website must communicate with the inventory system for tracking and maintain
 					
 						\item Website validates accurate pricing with additional taxes for total price
 					
-						\item Website requests member customer the following information: payment information, billing address, option for home deliver or in-store pickup \textit{Note: should website keep payment information for customer}s?
+						\item Website requests member customer the following information: payment information, billing address, option for home deliver or in-store pickup %\textit{Note: should website keep payment information for customer}s?
 					
 						\item Guest customer select “Place Order” option
 					
@@ -549,15 +559,16 @@ This feature allows customers to create and edit settings for grocery store acco
 	\end{table}
 \end{funreq}
 
-%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
-\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
-\begin{funreq}
-	\label{account_createstaff}
-	TITLE: Create a new Staff account\\
-	DESC: An administrator should assign staff roles and permissions and an internal company email address\\
-	RAT: In order for an employee to register an account\\
-	DEP: None\\
-\end{funreq}
+%%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+%\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+%\begin{funreq}
+%	\label{account_createstaff}
+%	TITLE: Create a new Staff account\\
+%	DESC: An administrator should assign staff roles and permissions and an internal company email address\\
+%	RAT: In order for an employee to register an account\\
+%	DEP: None\\
+%	PRIORITY: Medium\\
+%\end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -566,7 +577,8 @@ This feature allows customers to create and edit settings for grocery store acco
 	TITLE: Login into Account\\
 	DESC: Given that an employee has created an account, then the employee should be able to log in to his/her account.\\
 	RAT: In order to identify an employee to shop online and use website/store’s features or for staff to access admin platform\\
-	DEP: \reqref{account_create}
+	DEP: \reqref{account_create}\\
+	PRIORITY: High\\
 \end{funreq}
 %\paragraph[]{\normalfont A create account page must be available to accept new store accounts}
 %\paragraph[]{\normalfont A login page must be available for users to access existing accounts.}
@@ -608,6 +620,7 @@ This feature allows customers to create and edit settings for grocery store acco
 		DESC: The system shall request item quantities from the inventory API.  The inventory system shall respond with the specified item number along with the quantity of that item available for purchase. The inventory system returns the item number to verify the request.\\
 		RAT: In order for the customer to know which items are available\\
 		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -637,6 +650,7 @@ This feature allows customers to create and edit settings for grocery store acco
 		DESC: The system shall request item price from the inventory API.  The inventory API shall return the item number and the item price.\\
 		RAT: In order for the customer to know which items are available\\
 		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 
 
@@ -647,6 +661,7 @@ This feature allows customers to create and edit settings for grocery store acco
 		DESC: The system shall send a request to the inventory API to decrement an item count when the customer completes an order.  The request shall contain the item number and the quantity that the customer has purchased.  The inventory API shall then decrement the count for the specified item.\\
 		RAT: In order to maintain accurate inventory information\\
 		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 
 	%\paragraph[]{Functional requirement %\arabic{subsubsection}.\arabic{paragraph}}
@@ -710,6 +725,7 @@ This feature allows customers on the website to see which items the grocery stor
 	DESC: When the customer enters the website URL, they shall be brought to a homepage.  The homepage shall contain navigation buttons for the user and listings of items that WKGS wishes to feature.\\
 	RAT: So that a customer can navigate the website.\\
 	DEP: None\\
+	PRIORITY: High\\
 \end{funreq}
 
 
@@ -770,6 +786,7 @@ This feature allows customers on the website to see which items the grocery stor
 	DESC: When a search term is entered in the searchbox, the storefront shall display all items matching the query.\\
 	RAT: So that a customer can quickly find items.\\
 	DEP: \reqref{inventory_quantity}\\
+	PRIORITY: Medium\\
 \end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -780,6 +797,7 @@ This feature allows customers on the website to see which items the grocery stor
 	DESC: When the customer clicks on an item on the storefront, the item details are displayed.  The details include a product description and price\\
 	RAT: So that a customer can know what they are buying\\
 	DEP: \reqref{store_listcategory}\\
+	PRIORITY: High\\
 \end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -790,6 +808,7 @@ This feature allows customers on the website to see which items the grocery stor
 	DESC: When a customer logs-in to the website, the homepage shall display sale items for.\\
 	RAT: So that a customer can know what they are buying.\\
 	DEP: \reqref{account_login}\\
+	PRIORITY: Low\\
 \end{funreq}
 
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -799,6 +818,7 @@ This feature allows customers on the website to see which items the grocery stor
 	DESC: On the item details page, the customer shall be presented with an quantity selector which will be added to the cart when the "Add to cart" button is pressed.\\
 	RAT: So that a customer can purchase items\\
 	DEP: \reqref{cart_add}, \reqref{store_details}\\
+	PRIORITY: Medium\\
 \end{funreq}
 
 
@@ -895,7 +915,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Cart/list persistence\\
 		DESC: Each customer shall have a persistent record of which items are currently in their cart and shopping list.\\
 		RAT: Allow customers to track which items they wish to purchase.\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -904,7 +925,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Add items to cart\\
 		DESC: When the customer selects an "Add to cart" option, the cart shall display the item name, quantity, and price in the cart.\\
 		RAT: Allow customers and guests to track which items they wish to purchase.\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -913,16 +935,18 @@ This feature allows customers on the website to see which items the grocery stor
 	TITLE: Add items to list\\
 	DESC: When the customer selects an "Add to shopping list" option, the shopping list shall display the item name, quantity, and price in the cart.\\
 	RAT: Allow customers to track which items they wish to purchase in store.\\
-	DEP: None
+	DEP: None\\
+	PRIORITY: Low\\
 \end{funreq}
 
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_remove}
-		TITLE: Remove items to cart/list\\
+		TITLE: Remove items from cart/list\\
 		DESC: When the customer selects the "remove" option, the item shall be removed from the cart/shopping list.\\
 		RAT: Allow customers to track which items they wish to purchase.\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -931,7 +955,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Change item quantity in cart/list\\
 		DESC: The customer shall be able to change the quantity of each item in the cart/list.\\
 		RAT: Allow customers to track which items they wish to purchase.\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -940,7 +965,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Buy items from the shopping cart\\
 		DESC: When the customer clicks on the "Proceed to checkout" option in the cart interface, the customer shall be brought to the online checkout system.\\
 		RAT: Allow customers to track which items they wish to purchase\\
-		DEP: \reqref{online_checkout}
+		DEP: \reqref{online_checkout}\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	\subsection{Employee}
@@ -966,7 +992,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Employee login\\
 		DESC: All employees shall be able to log-in to the employee page.\\
 		RAT: So that the employees can view their schedules\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -976,7 +1003,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Add employee\\
 		DESC: Managers shall be able to add employee from the company.  \\
 		RAT:  So that the employee know their current working status within the company\\
-		DEP: None
+		DEP: None\\
+		PRIORITY: High\\
 	\end{funreq}
 
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
@@ -985,7 +1013,8 @@ This feature allows customers on the website to see which items the grocery stor
 	TITLE: Remove employee\\
 	DESC: Managers shall be able to remove employee from the company.  \\
 	RAT:  So that the employee know their current working status within the company\\
-	DEP: None
+	DEP: None\\
+	PRIORITY: High\\
 \end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -995,7 +1024,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Employee role\\
 		DESC: Employees shall have a role such as manager, owner, cashier, etc...  The employee role will dictate what privileges and features the employee have access.\\
 		RAT:  So that managers can manage the company\\
-		DEP: \reqref{employee_add}
+		DEP: \reqref{employee_add}\\
+		PRIORITY: High\\
 	\end{funreq}
 
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -1054,7 +1084,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Employee view assigned work schedule\\
 		DESC: Employees shall have a page where they can view their assigned schedule for the week.  The schedule will show which days they will work and what hours they must work.\\
 		RAT: So that employees can know which days to work\\
-		DEP: \reqref{employee_assign}
+		DEP: \reqref{employee_assign}\\
+		PRIORITY: Low\\
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
@@ -1064,7 +1095,8 @@ This feature allows customers on the website to see which items the grocery stor
 		TITLE: Employee clock-in/clock-out\\
 		DESC: Employees must have a page where they clock in or out for their work day.  If an employee is not currently clocked in, they will be presented with an option to clock in.  If an employee is clocked in, they must be presented with an option to clock out.\\
 		RAT: So that managers can know how long an employee worked\\
-		DEP: \reqref{employee_addremove}
+		DEP: \reqref{employee_add}\\
+		PRIORITY: High\\
 	\end{funreq}
 	
 	\subsection{Delivery/Pickup System}
@@ -1124,7 +1156,7 @@ This feature allows customers on the website to see which items the grocery stor
                         
                         Customer did not fill in delivery address information
 					\\ \hline Priority & 
-					High
+					Medium
 					\\ \hline
 				\end{tabularx}%
 			}
@@ -1180,7 +1212,7 @@ This feature allows customers on the website to see which items the grocery stor
 					\\ \hline Exceptions & 
 					No employee found
 					\\ \hline Priority & 
-					High
+					Medium
 					\\ \hline
 				\end{tabularx}%
 			}
@@ -1232,7 +1264,7 @@ This feature allows customers on the website to see which items the grocery stor
 					\\ \hline Exceptions & 
 					No employee found
 					\\ \hline Priority & 
-					High
+					Medium
 					\\ \hline
 				\end{tabularx}%
 			}
@@ -1284,7 +1316,7 @@ This feature allows customers on the website to see which items the grocery stor
 					\\ \hline Exceptions & 
 					No employee found
 					\\ \hline Priority & 
-					High
+					Medium
 					\\ \hline
 				\end{tabularx}%
 			}
