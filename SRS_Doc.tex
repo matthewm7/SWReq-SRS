@@ -49,7 +49,7 @@
 \newcounter{funcreq}
 \makeatletter
 \newenvironment{funcreq}
-{\refstepcounter{funcreq}{}%
+{\refstepcounter{funcreq}{} 
 	\protected@edef\@currentlabelname
 	everypar={{\setbox0=\lastbox}\thefuncreq.\hspace{4pt}\everypar={}}
 	\noindent
@@ -64,6 +64,15 @@
 
 }
 \makeatother
+
+
+\makeatletter
+\patchcmd{\@afterheading}%
+{\clubpenalty \@M}{\clubpenalties 3 \@M \@M 0}{}{}
+\patchcmd{\@afterheading}%
+{\clubpenalty \@clubpenalty}{\clubpenalties 2 \@clubpenalty 0}{}{}
+\makeatother
+
 
 %\newcommand*{\currentname}{\zref@getcurrent{subsection}}
 \let\Chaptermark\chaptermark
@@ -392,8 +401,10 @@ The website must communicate with the inventory system for tracking and maintain
 		DEP: None\\
 		PRIORITY: High\\
 		\end{funreq}
+	
 		%\clearpage
-		\goodbreak
+		%\begin{samepage}
+		\penalty-10000
 			\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 		\begin{funreq}~
 		\begin{table}[H]
@@ -450,9 +461,12 @@ The website must communicate with the inventory system for tracking and maintain
 			}
 		\end{table}
 	\end{funreq}
+
+%\end{samepage}
 		%\clearpage
 				%\end{table}
-				\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\penalty-10000
+	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}~
 		\begin{table}[H]
 			%\begin{adjustbox}{width=\textwidth}
@@ -620,6 +634,7 @@ This feature allows customers to create and edit settings for grocery store acco
 	%	DEP: None\\
 	%\end{funreq}
 		%\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
+	\penalty-1000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{inventory_quantity}
@@ -650,6 +665,7 @@ This feature allows customers to create and edit settings for grocery store acco
 %		DEP: \reqref{inventory_create}
 %	\end{funreq}
 
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{inventory_price}
@@ -660,7 +676,7 @@ This feature allows customers to create and edit settings for grocery store acco
 		PRIORITY: High\\
 	\end{funreq}
 
-
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{inventory_decrement}
@@ -725,6 +741,7 @@ This feature allows customers on the website to see which items the grocery stor
 \subsubsection{Associated functional requirements}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_home}
@@ -737,6 +754,7 @@ This feature allows customers on the website to see which items the grocery stor
 
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_listcategory}
@@ -786,6 +804,7 @@ This feature allows customers on the website to see which items the grocery stor
 \end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_search}
@@ -797,6 +816,7 @@ This feature allows customers on the website to see which items the grocery stor
 \end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_details}
@@ -808,6 +828,7 @@ This feature allows customers on the website to see which items the grocery stor
 \end{funreq}
 
 %\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_displaysales}
@@ -818,6 +839,7 @@ This feature allows customers on the website to see which items the grocery stor
 	PRIORITY: Low\\
 \end{funreq}
 
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{store_detailscart}
@@ -916,6 +938,7 @@ This feature allows customers on the website to see which items the grocery stor
 %*****************************************************************************************************************	
 %I think we have to do rework shopping cart/list
 %****************************************************
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_persist}
@@ -926,6 +949,7 @@ This feature allows customers on the website to see which items the grocery stor
 		PRIORITY: High\\
 	\end{funreq}
 	
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_add}
@@ -936,16 +960,18 @@ This feature allows customers on the website to see which items the grocery stor
 		PRIORITY: High\\
 	\end{funreq}
 
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
-\begin{funreq}
-	\label{list_add}
-	TITLE: Add items to list\\
-	DESC: When the customer selects an "Add to shopping list" option, the shopping list shall display the item name, quantity, and price in the cart.\\
-	RAT: Allow customers to track which items they wish to purchase in store.\\
-	DEP: None\\
-	PRIORITY: Low\\
-\end{funreq}
+	\begin{funreq}
+		\label{list_add}
+		TITLE: Add items to list\\
+		DESC: When the customer selects an "Add to shopping list" option, the shopping list shall display the item name, quantity, and price in the cart.\\
+		RAT: Allow customers to track which items they wish to purchase in store.\\
+		DEP: None\\
+		PRIORITY: Low\\
+	\end{funreq}
 
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_remove}
@@ -956,6 +982,7 @@ This feature allows customers on the website to see which items the grocery stor
 		PRIORITY: High\\
 	\end{funreq}
 
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_changequantity}
@@ -966,6 +993,7 @@ This feature allows customers on the website to see which items the grocery stor
 		PRIORITY: High\\
 	\end{funreq}
 	
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{cart_buy}
@@ -1004,6 +1032,7 @@ This feature allows customers on the website to see which items the grocery stor
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_add}
@@ -1014,6 +1043,7 @@ This feature allows customers on the website to see which items the grocery stor
 		PRIORITY: High\\
 	\end{funreq}
 
+\penalty-5000
 \paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 \begin{funreq}
 	\label{employee_remove}
@@ -1025,6 +1055,7 @@ This feature allows customers on the website to see which items the grocery stor
 \end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_role}
@@ -1036,6 +1067,7 @@ This feature allows customers on the website to see which items the grocery stor
 	\end{funreq}
 
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_assign}
@@ -1044,6 +1076,7 @@ This feature allows customers on the website to see which items the grocery stor
 		RAT: So that employees can know which days to work\\
 		DEP: \reqref{employee_role}
 		
+		\penalty-10000
 		\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm}Manager assigns work days}\end{flushleft}
 		\begin{table}[H]
 			\begin{tabularx}{\columnwidth}{|X|X|X|X|}
@@ -1085,6 +1118,7 @@ This feature allows customers on the website to see which items the grocery stor
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\penalty-5000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_viewwork}
@@ -1096,6 +1130,7 @@ This feature allows customers on the website to see which items the grocery stor
 	\end{funreq}
 	
 	%\paragraph[]{Functional requirement \arabic{subsubsection}.\arabic{paragraph}}
+	\penalty-6000
 	\paragraph[]{\Subsectionname ~functional requirement \arabic{paragraph}}
 	\begin{funreq}
 		\label{employee_clock}
@@ -1117,12 +1152,13 @@ This feature allows customers on the website to see which items the grocery stor
 	\raggedbottom
 	\looseness=-1
 	
+	\penalty-10000
 	\subsubsection{Associated functional requirements}
 	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 	%\paragraph[]{Delivery option – }
-	\begin{funreq}
+	\begin{funreq}~
 	\label{grocery_deliveryaddr}
-	~
+	
 %	\begin{flushleft}\bfseries{ID and Name: FR\thefunreq ~\hspace{.6cm} }\end{flushleft}
 
 		\begin{table}[H]
@@ -1170,6 +1206,7 @@ This feature allows customers on the website to see which items the grocery stor
 		\end{table}
 	\end{funreq}
 	
+	\penalty-10000
 	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 %	\paragraph[]{Delivery option – Receive online order for delivery}
 	\begin{funreq}
@@ -1226,7 +1263,7 @@ This feature allows customers on the website to see which items the grocery stor
 		\end{table}
 	\end{funreq}
 
-
+\penalty-10000
 %	\paragraph[]{In-store pickup option – User selects pickup time }
 	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 	\begin{funreq}
@@ -1278,7 +1315,7 @@ This feature allows customers on the website to see which items the grocery stor
 		\end{table}
 	\end{funreq}
 
-
+\penalty-10000
 %	\paragraph[]{In-store pickup option – Receive online order for in-store pickup}
 	\paragraph[]{\Subsectionname ~ functional requirement \arabic{paragraph}}
 	\begin{funreq}
